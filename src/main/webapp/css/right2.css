@@ -1,0 +1,85 @@
+body{
+    background-color: white;
+}
+.div1{
+    height: 100px;
+    width:1100px;
+}
+.div1_1{
+    width: 196px;
+    height:100px;
+    float: left;
+    margin-left:30px;
+    border: 1px solid gainsboro;
+}
+.flo1{
+    float: left;
+}
+.div1_2{
+    width: 130px;
+    height:100px;
+    float: left;
+    margin-left: 10px;
+    border: 1px solid gainsboro;
+    display: none;
+}
+.div1_3{
+    width:800px;
+    height:100px;
+    float: left;
+    margin-left: 10px;
+}
+.div1_3_1{
+    width: 330px;
+    height:100px;
+    float: left;
+    border: 1px solid gainsboro;
+}
+.div1311{
+    margin-left: 13px;
+}
+.div1_3_2{
+    width: 307px;
+    height:100px;
+    float: left;
+    margin-left: 10px;
+    border: 1px solid gainsboro;
+    /*background-color: red;*/
+}
+.div1321{
+    margin-top:10px;
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+}
+.div2{
+    height: 130px;margin-top: 5px;
+}
+.div2_1{
+    width: 196px;
+    height:100px;
+    float: left;
+    margin-left:30px;
+    border: 1px solid gainsboro;
+}
+.div2_2{
+    float: left;
+    width:840px;
+    height:100px;
+    margin-left: 10px;
+    border: 1px solid gainsboro;
+}
+.div2_2_1{
+    float: left;
+    margin-top: 38px;
+}
+.div2_2_2{
+    float: left;
+    margin-top: 38px;
+    margin-left: 10px;
+}
+.div3{
+    float:left;
+    width: 300px;
+    margin-left: 500px;
+}

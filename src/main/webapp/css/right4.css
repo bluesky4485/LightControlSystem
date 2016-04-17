@@ -1,0 +1,25 @@
+.divmain{
+    height: 600px;
+}
+.div1{
+    margin-left: 250px;
+}
+.div1_1{
+    margin-left: 194px;
+}
+.div1_2{
+    margin-left: 50px;
+}
+.div2{
+    width: 1100px;
+    margin-left: 15px;
+}
+.table1{
+    width: 1000px;
+    border:  solid skyblue;
+    text-align: center;
+}
+.td1{
+    border: solid skyblue;
+    border-width: 1px 0 0 1px;
+}

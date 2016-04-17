@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaogandeng.dao.LightMapper">
+
+    <resultMap type="com.gaogandeng.model.Light" id="LightResult">
+        <id property="id" column="id"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="groupId" column="group_id"/>
+        <result property="inGroupId" column="in_group_id"/>
+    </resultMap>
+
+    <select id="findAllLights" resultMap="LightResult">
+        SELECT * FROM lights
+    </select>
+
+    <select id="findLightById" resultMap="LightResult" parameterType="Integer">
+        SELECT * FROM lights WHERE id = #{lightId}
+    </select>
+
+    <select id="findLight" resultMap="LightResult" parameterType="Light">
+        SELECT * FROM lights WHERE TRUE
+        <if test="deviceId != null">
+            AND device_id = #{deviceId}
+        </if>
+
+        <if test="groupId != null">
+            AND group_id = #{groupId}
+        </if>
+
+        <if test="inGroupId != null">
+            AND in_group_id = #{inGroupId}
+        </if>
+    </select>
+
+    <insert id="insertLight" parameterType="Light" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO lights(device_id, group_id, in_group_id) VALUE (#{deviceId}, #{groupId}, #{inGroupId})
+    </insert>
+</mapper>

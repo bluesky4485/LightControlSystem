@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaogandeng.dao.LightControlLogMapper">
+
+    <resultMap type="com.gaogandeng.model.Light" id="LightResult">
+        <id property="id" column="id"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="groupId" column="group_id"/>
+        <result property="inGroupId" column="in_group_id"/>
+    </resultMap>
+
+    <select id="findLightById" resultMap="LightResult" parameterType="Integer">
+        SELECT * FROM lights WHERE id = #{lightId}
+    </select>
+    <resultMap type="com.gaogandeng.model.LightControlLog" id="ControlLogResult">
+        <id property="id" column="id"/>
+        <result property="cmd" column="cmd"/>
+        <result property="bright" column="bright"/>
+        <result property="status" column="status"/>
+        <result property="cmdTime" column="cmd_time"/>
+        <association property="light" column="light_id" select="findLightById"/>
+    </resultMap>
+
+    <insert id="insertLightControl" parameterType="LightControlLog" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO lightcontrollogs (light_id, cmd, bright, status, cmd_time) VALUES (
+        #{light.id}, #{cmd}, #{bright}, #{status}, #{cmdTime}
+        )
+    </insert>
+
+    <select id="findLightControlLog" parameterType="com.gaogandeng.QueryCondition.LightControlQuery" resultMap="ControlLogResult">
+        SELECT * FROM lightcontrollogs WHERE TRUE
+        <if test="id != null">
+            AND id = #{id}
+        </if>
+
+        <if test="lightId != null">
+            AND lightcontrollogs.light_id = #{lightId}
+        </if>
+
+        <if test="cmd != null">
+            AND lightcontrollogs.cmd = #{cmd}
+        </if>
+
+        <if test="status != null">
+            AND lightcontrollogs.status = #{status}
+        </if>
+
+        <if test="startTime != null">
+            AND lightcontrollogs.cmd_time >= #{startTime}
+        </if>
+
+        <if test="endTime != null">
+            AND lightcontrollogs.cmd_time &lt;= #{endTime}
+        </if>
+    </select>
+
+    <update id="updateStatus" parameterType="LightControlLog">
+        UPDATE lightcontrollogs SET status = #{status} WHERE id = #{id}
+    </update>
+
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gaogandeng:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="gaogandeng.war">
+      <element id="artifact" artifact-name="gaogandeng:war exploded" />
+    </root>
+  </artifact>
+</component>
