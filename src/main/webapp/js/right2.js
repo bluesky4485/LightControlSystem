@@ -5,8 +5,6 @@
 
 
 $(function(){
-
-    
     // 选择亮度插件
     $('.single-slider').jRange({
         from: 0,
@@ -150,11 +148,6 @@ $(function(){
 
 
     ajax2();
-
-
-
-
-
 });
 
 
@@ -219,7 +212,7 @@ function  succFunction2(data) {
     var diajiz = $.dialog(
         {
             title:"集中控制器",
-            width: "500px",
+            width: "340px",
             // height:"300px",
             content:deviceString,
             close: function () {
@@ -233,6 +226,9 @@ function  succFunction2(data) {
     $("#jizhong").click(function () {
         diajiz.show();
     });
+
+
+
 
     $("input[name=device]").each(function(){//给所有的input绑定事件
             $(this).click(function(){
@@ -249,11 +245,11 @@ function  succFunction2(data) {
      * 组号
      */
     //数组删除重复元素
-    for(var j=0;j<groupIdArr.length;j++){
-        for(var f=j+1;f<groupIdArr.length;f++){
-            if(groupIdArr[j]==groupIdArr[f]){
-                groupIdArr.splice(j,1);
-                j--;
+    for(var jj=0;jj<groupIdArr.length;jj++){
+        for(var ff=jj+1;ff<groupIdArr.length;ff++){
+            if(groupIdArr[jj]==groupIdArr[ff]){
+                groupIdArr.splice(jj,1);
+                jj--;
                 break;
             }
         }
@@ -261,14 +257,14 @@ function  succFunction2(data) {
     //数组排序
     groupIdArr.sort();
 
-    for(var i=0;i<groupIdArr.length;i++){
-        groupString+="<input type='checkbox' name='group' value="+groupIdArr[i]+" />"+groupIdArr[i];
+    for(var ii=0;ii<groupIdArr.length;ii++){
+        groupString+="<input type='checkbox' name='group' value="+groupIdArr[ii]+" />"+groupIdArr[ii];
     }
 
     var diazu = $.dialog(
         {
             title:"组",
-            width: "500px",
+            width: "340px",
             // height:"300px",
             content:groupString,
             close: function () {
@@ -297,11 +293,11 @@ function  succFunction2(data) {
      * 组内灯
      */
     //数组删除重复元素
-    for(var j=0;j<inGroupIdArr.length;j++){
-        for(var f=j+1;f<inGroupIdArr.length;f++){
-            if(inGroupIdArr[j]==inGroupIdArr[f]){
-                inGroupIdArr.splice(j,1);
-                j--;
+    for(var r=0;r<inGroupIdArr.length;r++){
+        for(var s=r+1;s<inGroupIdArr.length;s++){
+            if(inGroupIdArr[r]==inGroupIdArr[s]){
+                inGroupIdArr.splice(r,1);
+                r--;
                 break;
             }
         }
@@ -309,14 +305,14 @@ function  succFunction2(data) {
     //数组排序
     inGroupIdArr.sort();
 
-    for(var i=0;i<inGroupIdArr.length;i++){
-        inGroupString+="<input type='checkbox' name='light' value="+inGroupIdArr[i]+" />"+inGroupIdArr[i];
+    for(var t=0;t<inGroupIdArr.length;t++){
+        inGroupString+="<input type='checkbox' name='light' value="+inGroupIdArr[t]+" />"+inGroupIdArr[t];
     }
 
     var dialight = $.dialog(
         {
-            title:"组",
-            width: "500px",
+            title:"灯",
+            width: "340px",
             // height:"300px",
             content:inGroupString,
             close: function () {
