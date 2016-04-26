@@ -11,8 +11,8 @@
     <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 </head>
-<body>
-<div class="aboluo-w-700">
+<body style="width: 100%;text-align: center">
+<div class="aboluo-w-700" style="margin:0 auto">
     <div class="aboluo-leftdiv">
         <div class="aboluo-tools">
             <div class="aboluo-calendar-select-year"></div>

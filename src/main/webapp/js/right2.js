@@ -1,129 +1,11 @@
 /**
  * Created by chgu1_000 on 2016/3/17.
  */
-function cmd(url){
-    if(window.ActiveXObject){ //如果是IE浏览器
-        xmlHttpRequest= new ActiveXObject("Microsoft.XMLHTTP");
-    }else if(window.XMLHttpRequest){ //非IE浏览器
-        xmlHttpRequest= new XMLHttpRequest();
-    }
-    xmlHttpRequest.open("POST",url,true);//需要改
-    xmlHttpRequest.send(null);
-};
 
 
+$(function(){
 
-$(document).ready(function(){
-    //选择组号
-    var chtm= "";
-    for (var i = 1; i < 10; i++) {
-        chtm += "<div style='word-wrap:break-word; width:450px; '>";
-        chtm += '<label style="float:left;padding:15px"><input type="checkbox" name="aa" value="'+"0"+i+'" class="{required:true}" />' +
-            '<span style="margin-left:10px">组'+i+'</span></label>';
-        chtm += "</div>";
-    }
-    //把得到字符串利用jquery添加到元素里面生成checkbox
-    $("#selectlxr").html(chtm);
-    var dia = $.dialog(
-        {
-            title:"选择组号",width: "500px",
-            content: $("#selectlxr").html(),
-            close: function () {
-                this.hide();
-                return false;
-            },
-            follow: document.getElementById("jieshouren")
-        }
-    ).hide();
-    $("#jieshouren").click(function () {
-        dia.show();
-    })
-    $("input[name=aa]").each(function(){//给所有的input绑定事件
-        $(this).click(function(){
-            var I=[];
-            //创建空数组I
-            $("input[name=aa]:checked").each(function(i){I[i]=this.value});
-            //将所有的选中的值存放I
-            $("#jsrtxt").val(I.join(";"));//将数据值联合字符串给显示对象附值
-        })
-    })
-
-
-
-    //选择灯号
-    var chtm2 = "";
-    for (var i = 1; i < 5; i++) {
-        chtm2 += "<div style='word-wrap:break-word; width:450px; '>";
-        chtm2 += '<label style="float:left;padding:15px"><input type="checkbox" name="bb" value="'+i+'" class="{required:true}" />' +
-            '<span style="margin-left:10px">灯'+i+'</span></label>';
-        chtm2 += "</div>";
-    }
-
-    //把得到字符串利用jquery添加到元素里面生成checkbox
-    $("#selectlxr2").html(chtm2);
-    //创建一个 dialog弹出框
-    var dia2 = $.dialog(
-        {
-            title:"选择灯号",width: "500px",
-            content: $("#selectlxr2").html(),
-            close: function () {
-                this.hide();
-                return false;
-            },
-            follow: document.getElementById("jieshouren2")
-        }
-    ).hide();
-    $("#jieshouren2").click(function () {
-        dia2.show();
-    })
-    $("input[name=bb]").each(function(){//给所有的input绑定事件
-        $(this).click(function(){
-            var I2=[];
-            //创建空数组I2
-            $("input[name=bb]:checked").each(function(i){I2[i]=this.value});
-            //将所有的选中的值存放I2
-            $("#jsrtxt2").val(I2.join(";"));//将数据值联合字符串给显示对象附值
-        })
-    })
-
-
-    //选择集中选择器
-    var chtm3 = "";
-    for (var i = 1; i < 10; i++) {
-        chtm3 += "<div style='word-wrap:break-word; width:450px; '>";
-        chtm3 += '<label style="float:left;padding:15px"><input type="radio" name="cc" value="'+"000"+i+'" class="{required:true}" />' +
-            '<span style="margin-left:10px">集中'+i+'</span></label>';
-        chtm3 += "</div>";
-    }
-    //把得到字符串利用jquery添加到元素里面生成checkbox
-    $("#selectlxr3").html(chtm3);
-    //创建一个 dialog弹出框
-    var dia3 = $.dialog(
-        {
-            title:"选择组号",width: "500px",
-            content: $("#selectlxr3").html(),
-            close: function () {
-                this.hide();
-                return false;
-            },
-            follow: document.getElementById("jieshouren3")
-        }
-    ).hide();
-    $("#jieshouren3").click(function () {
-        dia3.show();
-    })
-    $("input[name=cc]").each(function(){//给所有的input绑定事件
-        $(this).click(function(){
-            var I3=[];
-            //创建空数组I3
-            $("input[name=cc]:checked").each(function(i){I3[i]=this.value});
-            //将所有的选中的值存放I3
-            $("#jsrtxt3").val(I3.join(";"));//将数据值联合字符串给显示对象附值
-        })
-    })
-
-
-
+    // 选择亮度插件
     $('.single-slider').jRange({
         from: 0,
         to: 100,
@@ -134,16 +16,18 @@ $(document).ready(function(){
         showLabels: true,
         showScale: true
     });
-    //$('.range-slider').jRange({
-    //    from: 0,
-    //    to: 255,
-    //    step: 1,
-    //    scale: [0,51,102,153,204,255],
-    //    format: '%s',
-    //    width: 300,
-    //    showLabels: true,
-    //    isRange : true
-    //});
+
+    // 控制任务发送
+    function cmd(url){
+        if(window.ActiveXObject){ //如果是IE浏览器
+            xmlHttpRequest= new ActiveXObject("Microsoft.XMLHTTP");
+        }else if(window.XMLHttpRequest){ //非IE浏览器
+            xmlHttpRequest= new XMLHttpRequest();
+        }
+        xmlHttpRequest.open("POST",url,true);//需要改
+        xmlHttpRequest.send(null);
+    };
+
 
     $("#sub").click(function() {
         var control = $('input:radio[name=control]:checked').val();//即时：0  定时：1
@@ -253,13 +137,6 @@ $(document).ready(function(){
         $('div#choose_light').show();
     });
 
-    //$("#openlight").click(function(){
-    //    $('div#bright').show();
-    //});
-    //
-    //$("#closelight").click(function(){
-    //    $('div#bright').hide();
-    //});
 
     $(document).ready(function(){
         $(".flip2").click(function(){
@@ -269,10 +146,196 @@ $(document).ready(function(){
 
 
 
+    ajax2();
+
+
+
 
 
 })
 
 
+function ajax2(){
+    $.ajax({
+        url:'/control/querylights.do',
+        type:"GET",
+        dataType: 'json',
+        timeout: 1000,
+        cache: false,
+        //beforeSend: LoadFunction, //加载执行方法
+        //error: erryFunction,  //错误执行方法
+        success: succFunction2 //成功执行方法
+    })
+}
 
+function  succFunction2(data) {
+
+    var jsonData = eval(data);
+
+    var deviceString = "";
+    var groupString = "";
+    var inGroupString = "";
+
+    var deviceIdArr = new Array();
+    var groupIdArr = new Array();
+    var inGroupIdArr = new Array();
+
+
+    $.each(jsonData, function (index,item) {
+        var deviceId = item.deviceId;
+        var groupId = item.groupId;
+        var inGroupId = item.inGroupId;
+
+        deviceIdArr[index] = deviceId;
+        groupIdArr[index] = groupId;
+        inGroupIdArr[index] = inGroupId;
+
+
+    })
+
+    /**
+     * 集中控制器
+     */
+    //数组删除重复元素
+    for(var j=0;j<deviceIdArr.length;j++){
+        for(var f=j+1;f<deviceIdArr.length;f++){
+            if(deviceIdArr[j]==deviceIdArr[f]){
+                deviceIdArr.splice(j,1);
+                j--;
+                break;
+            }
+        }
+    }
+    //数组排序
+    deviceIdArr.sort();
+
+    for(var i=0;i<deviceIdArr.length;i++){
+        deviceString+="<input type='radio' name='device' value="+deviceIdArr[i]+" />"+deviceIdArr[i];
+    }
+
+    var diajiz = $.dialog(
+        {
+            title:"集中控制器",
+            width: "500px",
+            // height:"300px",
+            content:deviceString,
+            close: function () {
+                this.hide();
+                return false;
+            },
+            follow: document.getElementById("jizhong")
+        }
+    ).hide();
+
+    $("#jizhong").click(function () {
+        diajiz.show();
+    })
+
+    $("input[name=device]").each(function(){//给所有的input绑定事件
+            $(this).click(function(){
+                var de=[];
+                //创建空数组de
+                $("input[name=device]:checked").each(function(i){de[i]=this.value});
+                //将所有的选中的值存放de
+                $("#jizhongtxt").val(de.join(";"));//将数据值联合字符串给显示对象附值
+            })
+    })
+
+
+    /**
+     * 组号
+     */
+    //数组删除重复元素
+    for(var j=0;j<groupIdArr.length;j++){
+        for(var f=j+1;f<groupIdArr.length;f++){
+            if(groupIdArr[j]==groupIdArr[f]){
+                groupIdArr.splice(j,1);
+                j--;
+                break;
+            }
+        }
+    }
+    //数组排序
+    groupIdArr.sort();
+
+    for(var i=0;i<groupIdArr.length;i++){
+        groupString+="<input type='checkbox' name='group' value="+groupIdArr[i]+" />"+groupIdArr[i];
+    }
+
+    var diazu = $.dialog(
+        {
+            title:"组",
+            width: "500px",
+            // height:"300px",
+            content:groupString,
+            close: function () {
+                this.hide();
+                return false;
+            },
+            follow: document.getElementById("zu")
+        }
+    ).hide();
+
+    $("#zu").click(function () {
+        diazu.show();
+    })
+
+    $("input[name=group]").each(function(){//给所有的input绑定事件
+        $(this).click(function(){
+            var zu=[];
+            //创建空数组
+            $("input[name=group]:checked").each(function(i){zu[i]=this.value});
+            //将所有的选中的值存放
+            $("#zutxt").val(zu.join(";"));//将数据值联合字符串给显示对象附值
+        })
+    })
+
+    /**
+     * 组内灯
+     */
+    //数组删除重复元素
+    for(var j=0;j<inGroupIdArr.length;j++){
+        for(var f=j+1;f<inGroupIdArr.length;f++){
+            if(inGroupIdArr[j]==inGroupIdArr[f]){
+                inGroupIdArr.splice(j,1);
+                j--;
+                break;
+            }
+        }
+    }
+    //数组排序
+    inGroupIdArr.sort();
+
+    for(var i=0;i<inGroupIdArr.length;i++){
+        inGroupString+="<input type='checkbox' name='light' value="+inGroupIdArr[i]+" />"+inGroupIdArr[i];
+    }
+
+    var dialight = $.dialog(
+        {
+            title:"组",
+            width: "500px",
+            // height:"300px",
+            content:inGroupString,
+            close: function () {
+                this.hide();
+                return false;
+            },
+            follow: document.getElementById("light")
+        }
+    ).hide();
+
+    $("#light").click(function () {
+        dialight.show();
+    })
+
+    $("input[name=light]").each(function(){//给所有的input绑定事件
+        $(this).click(function(){
+            var light=[];
+            //创建空数组
+            $("input[name=light]:checked").each(function(i){light[i]=this.value});
+            //将所有的选中的值存放
+            $("#lighttxt").val(light.join(";"));//将数据值联合字符串给显示对象附值
+        })
+    })
+}
 

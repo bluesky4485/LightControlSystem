@@ -9,8 +9,8 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
 
 </head>
-<body>
-<div style="width: 1148px;">
+<body style="text-align: center">
+<div style="margin: 0 auto;width: 70%">
     <div style="margin-left:250px; ">
     <a href="<c:url value="/jsp/adduser.jsp"/>"><h4 style="text-decoration:underline">增加用户</h4></a>
     </div>

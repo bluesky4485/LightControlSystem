@@ -17,8 +17,8 @@
     <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
     <script src="../js/right4.js"></script>
 </head>
-<body>
-<div>
+<body style="text-align: center">
+<div style="margin: 0 auto;width: 70%">
     <div class="div1">
         <div class="div1_1">
             <h2 style="color: #1a8cff">操作查询</h2>

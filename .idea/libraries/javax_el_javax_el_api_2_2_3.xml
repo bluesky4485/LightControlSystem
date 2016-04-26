@@ -3,6 +3,8 @@
     <properties maven-id="javax.el:javax.el-api:2.2.3" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/javax.el-api-2.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.el-api-2.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.el-api-2.2.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

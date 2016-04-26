@@ -57,11 +57,16 @@ public class LightControl {
         this.cmdControlService=cmdControlService;
     }
 
-
+    @RequestMapping(value="/querylights")
+    public @ResponseBody
+    List<Light> getAllLights(){
+        List<Light> lights=lightService.findAllLights();
+        return lights;
+    }
 
     @RequestMapping(value="/query")
     public @ResponseBody
-    List<ControlLog> getControlLogByTime(HttpServletRequest request, HttpServletResponse response){
+    List<ControlLog> getControlLogByTime(HttpServletRequest request){
         ControlLogQuery query =new ControlLogQuery();
         String startTime=request.getParameter("start_time");
         String stopTime =request.getParameter("stop_time");
@@ -120,16 +125,23 @@ public class LightControl {
             lightsBuffer.append(light.getId().toString() + ";");
         }
         controlLog.setLightIds(lightsBuffer.toString());
+        String data=Integer.toHexString(Integer.parseInt(bright)*255/100);
+
+
+        switch(data.length()){
+            case 1:data = "0" + data;
+                break;
+        }
         //charu mysql
-        cmdControlService.insertControlLog(controlLog);
-        String cmd = cmdControlService.getCmdInfo("0000","0000","01",Integer.toHexString(Integer.parseInt(bright)));
-        cmd = "$" + cmd + "$";
+//        cmdControlService.insertControlLog(controlLog);
+        String cmd = cmdControlService.getCmdInfo("0000","0000","01",data);
+        cmd = "@" + cmd + "$";
 
         redisService.pushCmd("gaogandeng:timelytask:list", cmd);
     }
 
     /**
-     * dui fei suo you deng cao zuo
+     * 对非所有灯操作
      * @param request
      * @param response
      */
@@ -149,6 +161,10 @@ public class LightControl {
         if(Strings.isNullOrEmpty(groupNo) && Strings.isNullOrEmpty(dengNo)){
             codeNo = "01";
             data =String.valueOf(Integer.parseInt(bright)*255/100);
+            switch(data.length()){
+                case 1:data = "0" + data;
+                    break;
+            }
             queryLight.setDeviceId(deviceNo);
             List<Light> lights = lightService.findLight(queryLight);
             if(lights != null){
@@ -162,6 +178,10 @@ public class LightControl {
             String []groupNos = groupNo.split(";");
             for(String gs : groupNos){
                 data = data +gs+Integer.toHexString(Integer.parseInt(bright)*255/100);
+                switch(data.length()){
+                    case 1:data = "0" + data;
+                        break;
+                }
 //                System.out.println(data);
                 if(gs!=""){
                     queryLight.setGroupId(gs);
@@ -183,7 +203,12 @@ public class LightControl {
                 String tmp = "";
                 queryLight.setGroupId(gs);
                 for(String ds : dengNos){
-                    tmp += ds;
+                    String br=Integer.toHexString(Integer.parseInt(bright)*255/100);
+                    switch(br.length()){
+                        case 1:br = "0" + br;
+                            break;
+                    }
+                    tmp += gs+ds+br;
                     queryLight.setInGroupId(ds);
                     List<Light> lights = lightService.findLight(queryLight);
                     if(lights != null){
@@ -193,7 +218,8 @@ public class LightControl {
                     }
 
                 }
-                data = data + gs + tmp + Integer.toHexString(Integer.parseInt(bright)*255/100);
+                data = data + tmp ;
+//              System.out.println(data);
             }
         }
 
@@ -288,6 +314,7 @@ public class LightControl {
         controlLog.setBright(Integer.parseInt(bright)*255/100);
 
         controlLog.setLightIds(lightIds.toString());
+//        System.out.println(lightIds.toString());
 
         //TODO 自己添加当前用户信息
         controlLog.setUser(authenticationService.queryUserById(1));
@@ -295,7 +322,7 @@ public class LightControl {
          * 获得所有细分任务后的时间任务
          */
         Map<Date, String> tasks = cmdControlService.insertControlLog(controlLog);
-
+//        System.out.print("DD");
         for(Date date : tasks.keySet()){
 //            String dt = df.format(date);
 ////            System.out.println(dt);

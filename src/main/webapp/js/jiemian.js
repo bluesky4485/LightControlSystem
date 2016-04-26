@@ -5,19 +5,21 @@
 $(function(){
 
         $("#hide").click(function(){
-            if($("#left").css('width') != '0px'){
-                $("#left1").animate({width:'30px'},"fast");
-                $("#left").animate({width:'toggle'},"fast");
-                $("#hide").animate({width:'30px'},"fast");
-                $("#hide").val('>>');
-            }
-            if($("#left").css('width') != '196px'){
-                $("#left1").animate({width:200},"fast");
-                $("#hide").animate({width:180},"fast");
-                $("#hide").val('<<');
-                $("#left").animate({width:196},"fast");
 
-            }
+            // if($("#left").css('width') =='98%'){
+            //     $("#left1").animate({width:'1%'},"fast");
+            //     $("#left").animate({width:'toggle'},"fast");
+            //     // $("#hide").animate({width:'5%'},"fast");
+            //     $("#hide").val('>>');
+            // }
+            //
+            // if($("#left").css('width') !='98%'){
+            //     $("#left1").animate({width:'15%'},"fast");
+            //     // $("#hide").animate({width:'98%'},"fast");
+            //     $("#hide").val('<<');
+            //     $("#left").animate({width:'98%'},"fast");
+            //
+            // }
 
         });
 

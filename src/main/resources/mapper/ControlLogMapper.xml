@@ -30,8 +30,8 @@
     </resultMap>
 
     <insert id="insertControlLog" parameterType="ControlLog" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO controllogs (open_time, close_time, control_user_id, light_ids, status, bright, cmd) VALUES (
-        #{openTime}, #{closeTime}, #{user.userId}, #{lightIds}, #{status}, #{bright}, #{cmd}
+        INSERT INTO controllogs (open_time, close_time, control_user_id, light_ids, status, cmd, bright ) VALUES (
+        #{openTime}, #{closeTime}, #{user.userId}, #{lightIds}, #{status}, #{cmd},#{bright}
         )
     </insert>
 

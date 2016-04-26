@@ -22,47 +22,45 @@
     <script src="../js/jquery-ui-timepicker-addon.js"></script>
     <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
 </head>
-<body >
-    <div class="div1">
-        <div class="div1_1">
-            <h4><span class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;方式选择</span></h4><br>
-            <input id="controltime" class="flo1" type="radio" name="control"  checked="checked" value="1">
-            <h4 class="flo1">定时控制&nbsp;</h4>
-            <input id="controlnow" class="flo1" type="radio" name="control"  value="0">
-            <h4 class="flo1">即时控制</h4>
-        </div>
-        <%--<div class="div1_2" id="switch">--%>
-            <%--<h4><span class="text-primary">&nbsp;&nbsp;&nbsp;--%>
-                            <%--灯的动作</span></h4><br>--%>
-            <%--<input id="openlight" class="flo1" type="radio" name="switch1" value="1" checked="checked" >--%>
-            <%--<h4 class="flo1">开灯&nbsp;</h4>--%>
-            <%--<input id="closelight" class="flo1" type="radio" name="switch1" value="0" >--%>
-            <%--<h4 class="flo1">关灯</h4>--%>
-        <%--</div>--%>
-        <div class="div1_3">
-            <div id="bright" class="div1_3_1">
-                <h4 class="text-primary" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    灯的亮度(关灯为0)</h4><br>
-                <div class="div1311">
-                    <input  type="hidden" class="single-slider" />
-                </div>
+<body style="text-align: center;width: 100%">
+<div style="margin: 0 auto;width:95%;text-align: center;">
+    <div style="margin:0 auto">
+        <div class="div1">
+            <div class="div1_1">
+                <h4><span class="text-primary" style="text-align: center">方式选择</span></h4><br>
+                <input id="controltime" class="flo1" type="radio" name="control"  checked="checked" value="1">
+                <h4 class="flo1">定时控制&nbsp;</h4>
+                <input id="controlnow" class="flo1" type="radio" name="control"  value="0">
+                <h4 class="flo1">即时控制</h4>
             </div>
-            <div id="light_time" class="div1_3_2" >
-                <h4 class="text-primary" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亮灯时间(24小时内)</h4>
-                <div class="div1321">
-                    <input name="act_start_time" id="act_start_time" type="text" class="text-box" value="" placeholder="开灯时间" title="开始时间≥当前时间"  style="cursor:pointer;"/>
-                    <input name="act_stop_time" id="act_stop_time" type="text" class="text-box" value="" placeholder="关灯时间" title="结束时间>开始时间"  style="cursor:pointer;"/>
+            <%--<div class="div1_2" id="switch">--%>
+                <%--<h4><span class="text-primary">&nbsp;&nbsp;&nbsp;--%>
+                                <%--灯的动作</span></h4><br>--%>
+                <%--<input id="openlight" class="flo1" type="radio" name="switch1" value="1" checked="checked" >--%>
+                <%--<h4 class="flo1">开灯&nbsp;</h4>--%>
+                <%--<input id="closelight" class="flo1" type="radio" name="switch1" value="0" >--%>
+                <%--<h4 class="flo1">关灯</h4>--%>
+            <%--</div>--%>
+            <div class="div1_3">
+                <div id="bright" class="div1_3_1">
+                    <h4 class="text-primary" style="text-align: center">灯的亮度(关灯为0)</h4><br>
+                    <div class="div1311">
+                        <input  type="hidden" class="single-slider" />
+                    </div>
+                </div>
+                <div id="light_time" class="div1_3_2" >
+                    <h4 class="text-primary" style="text-align: center">任务时间(24小时内)</h4>
+                    <div class="div1321">
+                        <input name="act_start_time" id="act_start_time" type="text" class="text-box" value="" placeholder="开灯时间" title="开始时间≥当前时间"  style="cursor:pointer;"/>
+                        <input name="act_stop_time" id="act_stop_time" type="text" class="text-box" value="" placeholder="关灯时间" title="结束时间>开始时间"  style="cursor:pointer;"/>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="div2">
         <div class="div2_1">
-            <h4><span class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;灯的选择</span></h4><br>
+            <h4 style="text-align: center"><span class="text-primary">灯的选择</span></h4><br>
             <input id="notall" class="flo1" type="radio" name="suoyou"  value="0" checked="checked">
             <h4 class="flo1">非所有灯</h4>
             <input id="all" class="flo1" type="radio" name="suoyou" value="1" >
@@ -70,39 +68,39 @@
         </div>
         <div id="choose_light" class="div2_2">
             <div class="div2_2_1">
-                <div>
-                    <input type="text" id="jsrtxt3" style="width: 170px;"/>
-                    <button   id="jieshouren3" class=" btn-primary" >
-                        <div style="display:none" id="selectlxr3"></div>
+                <div style="width: 100%">
+                    <input type="text" id="jizhongtxt" style="width: 50%;"/>
+                    <button   id="jizhong" class=" btn-primary" >
+                        <div style="display:none" id="selectjizhong"></div>
                         选择集中选择器
                     </button>
                 </div>
             </div>
             <div class="div2_2_2">
-                <div >
-                    <input type="text" id="jsrtxt" style="width: 170px;"/>
-                    <button   id="jieshouren" class=" btn-primary" >
-                        <div style="display:none" id="selectlxr"></div>
+                <div style="width: 100%">
+                    <input type="text" id="zutxt" style="width: 50%;"/>
+                    <button   id="zu" class=" btn-primary" >
+                        <div style="display:none" id="selectzu"></div>
                         选择具体组号
                     </button>
                 </div>
             </div>
             <div class="div2_2_2">
-                <div >
-                    <input type="text" id="jsrtxt2" style="width: 170px;"/>
-                    <button   id="jieshouren2" class=" btn-primary" >
-                        <div style="display:none" id="selectlxr2"></div>
+                <div style="width: 100%">
+                    <input type="text" id="lighttxt" style="width: 50%;"/>
+                    <button   id="light" class=" btn-primary" >
+                        <div style="display:none" id="selectlight"></div>
                         选择具体灯号
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="div3">
+    <div class="div3" >
         <button id="sub"  class=" btn-primary" ><h4>提交</h4></button>
     </div>
-    <div style="float:left;width:1100px;margin-top: 5px;">
-        <table style="width: 1100px;">
+    <div style="float:left;width:100%;margin-top: 5px;">
+        <table style="width: 100%;">
             <thead>
             <tr style="background-color: #215867;text-align: center;">
                 <td><span style="color: white">#        </span></td>
@@ -126,7 +124,7 @@
     </div>
 
 
-
+</div>
 </body>
 
 </html>

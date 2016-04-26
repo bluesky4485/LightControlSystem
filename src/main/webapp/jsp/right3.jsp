@@ -20,36 +20,37 @@
         alert("已全部确认");
     }
 </script>
-<body>
-<div class="div1">
-    <table class="table1" id="tab">
-        <thead style="text-align: center">
-        <tr class="tr1">
-            <td><span class="text-primary"><h5>警情处理</h5></span></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><input type="button" value="全部确认" onclick="confirmall()"/></td>
-        </tr>
-        <tr class="tr2">
-            <td><span style="color: white">#</span></td>
-            <td><span style="color: white">控制器</span></td>
-            <td><span style="color: white">具体组号</span></td>
-            <td><span style="color: white">具体灯号</span></td>
-            <td><span style="color: white">警情原因</span></td>
-            <td><span style="color: white">已处理(Y/N)</span></td>
-            <td><span style="color: white">警情时间</span></td>
-            <td><span style="color: white">确认</span></td>
-        </tr>
-        </thead>
-        <tbody id="list" style="text-align: center"></tbody>
-    </table>
-</div>
-<div class="div2">
-
+<body style="text-align: center;width: 100%">
+<div style="margin: 0 auto;width: 70%">
+    <div class="div1">
+        <table class="table1" id="tab">
+            <thead style="text-align: center">
+            <tr class="tr1">
+                <td><span class="text-primary"><h5>警情处理</h5></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="button" value="全部确认" onclick="confirmall()"/></td>
+            </tr>
+            <tr class="tr2">
+                <td><span style="color: white">#</span></td>
+                <td><span style="color: white">控制器</span></td>
+                <td><span style="color: white">具体组号</span></td>
+                <td><span style="color: white">具体灯号</span></td>
+                <td><span style="color: white">警情原因</span></td>
+                <td><span style="color: white">已处理(Y/N)</span></td>
+                <td><span style="color: white">警情时间</span></td>
+                <td><span style="color: white">确认</span></td>
+            </tr>
+            </thead>
+            <tbody id="list" style="text-align: center"></tbody>
+        </table>
+    </div>
+    <div class="div2">
+    </div>
 </div>
 </body>
 </html>

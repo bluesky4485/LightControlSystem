@@ -173,6 +173,7 @@ public class CmdControlService {
 
         switch(len.length()){
             case 1:len = "000" + len;
+
                 break;
             case 2:len = "00" + len;
                 break;
