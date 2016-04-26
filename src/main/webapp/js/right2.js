@@ -1,3 +1,4 @@
+
 /**
  * Created by chgu1_000 on 2016/3/17.
  */
@@ -26,7 +27,7 @@ $(function(){
         }
         xmlHttpRequest.open("POST",url,true);//需要改
         xmlHttpRequest.send(null);
-    };
+    }
 
 
     $("#sub").click(function() {
@@ -132,6 +133,7 @@ $(function(){
     $("#all").click(function(){
         $('div#choose_light').hide();
     });
+    
 
     $("#notall").click(function(){
         $('div#choose_light').show();
@@ -152,7 +154,7 @@ $(function(){
 
 
 
-})
+});
 
 
 function ajax2(){
@@ -191,7 +193,7 @@ function  succFunction2(data) {
         inGroupIdArr[index] = inGroupId;
 
 
-    })
+    });
 
     /**
      * 集中控制器
@@ -229,7 +231,7 @@ function  succFunction2(data) {
 
     $("#jizhong").click(function () {
         diajiz.show();
-    })
+    });
 
     $("input[name=device]").each(function(){//给所有的input绑定事件
             $(this).click(function(){
@@ -239,7 +241,7 @@ function  succFunction2(data) {
                 //将所有的选中的值存放de
                 $("#jizhongtxt").val(de.join(";"));//将数据值联合字符串给显示对象附值
             })
-    })
+    });
 
 
     /**
@@ -278,7 +280,7 @@ function  succFunction2(data) {
 
     $("#zu").click(function () {
         diazu.show();
-    })
+    });
 
     $("input[name=group]").each(function(){//给所有的input绑定事件
         $(this).click(function(){
@@ -288,7 +290,7 @@ function  succFunction2(data) {
             //将所有的选中的值存放
             $("#zutxt").val(zu.join(";"));//将数据值联合字符串给显示对象附值
         })
-    })
+    });
 
     /**
      * 组内灯
@@ -326,7 +328,7 @@ function  succFunction2(data) {
 
     $("#light").click(function () {
         dialight.show();
-    })
+    });
 
     $("input[name=light]").each(function(){//给所有的input绑定事件
         $(this).click(function(){
