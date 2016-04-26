@@ -6,6 +6,7 @@
 
 $(function(){
 
+    
     // 选择亮度插件
     $('.single-slider').jRange({
         from: 0,
