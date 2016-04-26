@@ -132,6 +132,7 @@ $(function(){
     $("#all").click(function(){
         $('div#choose_light').hide();
     });
+    
 
     $("#notall").click(function(){
         $('div#choose_light').show();
