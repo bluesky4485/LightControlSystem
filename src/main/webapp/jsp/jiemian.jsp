@@ -18,7 +18,7 @@
     <div style=" height:90px;">
             <!--上左-->
             <div style="float:left;margin-top: 15px;width: 48%;">
-                <h2 style="color: honeydew;text-align: center">高杆灯照明系统</h2>
+                <h2 style="color: honeydew;text-align: center">大场景智能照明系统</h2>
             </div>
             <!--上右-->
             <div style="float:right; margin-top: 35px;">
