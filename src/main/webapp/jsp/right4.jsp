@@ -18,19 +18,19 @@
     <script src="../js/right4.js"></script>
 </head>
 <body style="text-align: center">
-<div style="margin: 0 auto;width: 70%">
+<div style="margin: 0 auto;width: 70%;">
     <div class="div1">
-        <div class="div1_1">
-            <h2 style="color: #1a8cff">操作查询</h2>
+        <div>
+            <h2 style="color: #1a8cff;text-align: center">操作查询</h2>
         </div>
         <div class="div1_2">
-            <input  name="cha_start_time" id="cha_start_time" type="text" class="mys" value="" placeholder="开始时间"  style="cursor:pointer;"/>
-            <input  name="cha_stop_time" id="cha_stop_time" type="text" class="mys" value="" placeholder="结束时间"  style="cursor:pointer;"/>
+            <input  name="cha_start_time" id="cha_start_time" type="text" class="mys" value="" placeholder="开始时间"  style="cursor:pointer;height: 20px"/>
+            <input  name="cha_stop_time" id="cha_stop_time" type="text" class="mys" value="" placeholder="结束时间"  style="cursor:pointer;height: 20px"/>
             &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="查询" onclick="findData(document.getElementById('cha_start_time').value,document.getElementById('cha_stop_time').value)"/>
         </div>
 
     </div>
-    <div class="div2">
+    <div>
         <table class="table1">
             <thead>
             <tr>

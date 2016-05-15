@@ -39,9 +39,9 @@ public class LightTest {
     @Test
     public void insertTest(){
         Light light = new Light();
-        light.setDeviceId("1000");
-        light.setGroupId("2000");
-        light.setInGroupId("2");
+        light.setDeviceId("0003");
+        light.setGroupId("04");
+        light.setInGroupId("4");
         lightService.insertLight(light);
         System.out.println(light);
     }

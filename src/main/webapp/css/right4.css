@@ -1,17 +1,11 @@
 
-.div1_1{
-    margin-top: 10px;
-    margin-left: 94px;
-}
 .div1_2{
-    margin-left: 50px;
-}
-.div2{
-
-    margin-left: 15px;
+    margin-top: 5px;
+    height: 25px;
 }
 .table1{
-    width: 1000px;
+    margin-top: 5px;
+    width: 100%;
     border:  solid skyblue;
     text-align: center;
 }

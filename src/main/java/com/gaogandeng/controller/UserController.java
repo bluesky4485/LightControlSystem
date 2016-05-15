@@ -35,7 +35,7 @@ public class UserController {
         userForm.setUserName(request.getParameter("username"));
         userForm.setPassword(request.getParameter("password"));
 
-        boolean right=authenticationService.validate(userForm);
+        boolean right = authenticationService.validate(userForm);
 
         if(right){
             User user = new User();
@@ -60,6 +60,18 @@ public class UserController {
         String id = request.getParameter("userId");
         Integer userId = Integer.valueOf(id);
         authenticationService.deleteUserById(userId);
+    }
+
+    @RequestMapping(value="/jsp/adduser")
+    public String addUser(HttpServletRequest request){
+        User user = new User();
+        user.setUserName(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
+        user.setPhone(request.getParameter("phone"));
+        user.setAddress(request.getParameter("address"));
+        user.setAuthority(Integer.valueOf(request.getParameter("authority")));
+        authenticationService.insertUser(user);
+        return "right6";
     }
 
 }

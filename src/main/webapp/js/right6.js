@@ -50,6 +50,7 @@ function getjson(){
             var password = item.password;
             var phone = item.phone;
             var address = item.address;
+            var authority = item.authority;
 
 
             var lineObj = $("<tr style='border: 1px solid skyblue'></tr>")
@@ -72,24 +73,25 @@ function getjson(){
             var addressObj=$("<td></td>")
             addressObj.html(address);
 
+            var authorityObj =$("<td style='display: none'></td>")
+            authorityObj.html(authority);
+
             var deletebutton = $("<td><button>"+"删除"+"</button></td>")
             deletebutton.click(function(event){
-                deletecmd(userId);
+                if(authority==1){
+                    deletecmd(userId);
+                }
             })
 
-            //var changebutton = $("<td><button>"+"修改"+"</button></td>")
-            //changebutton.click(function(event){
-            //    changecmd(userId);
-            //})
-
+            
             userIdObj.appendTo(lineObj);
             numObj.appendTo(lineObj);
             userNameObj.appendTo(lineObj);
             passwordObj.appendTo(lineObj);
             phoneObj.appendTo(lineObj);
-            //addressObj.appendTo(lineObj);
+            addressObj.appendTo(lineObj);
+            authorityObj.appendTo(lineObj);
             deletebutton.appendTo(lineObj);
-            //changebutton.appendTo(lineObj);
 
             lineObj.appendTo(fatherObj);
 

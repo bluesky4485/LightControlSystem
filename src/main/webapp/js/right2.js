@@ -182,6 +182,10 @@ function  succFunction2(data) {
         var groupId = item.groupId;
         var inGroupId = item.inGroupId;
 
+        // var deviceIdHex = Integer.parseInt(deviceId,16);
+        // var groupIdHex = Integer.parseInt(groupId,16);
+        // var inGroupIdHex = Integer.parseInt(inGroupId,16);
+
         deviceIdArr[index] = deviceId;
         groupIdArr[index] = groupId;
         inGroupIdArr[index] = inGroupId;

@@ -11,7 +11,7 @@
 </head>
 <body style="text-align: center">
 <div style="margin: 0 auto;width: 70%">
-    <div style="margin-left:250px; ">
+    <div>
     <a href="<c:url value="/jsp/adduser.jsp"/>"><h4 style="text-decoration:underline">增加用户</h4></a>
     </div>
     <table style="width:600px;margin-left: 250px;border: 1px solid">
@@ -21,7 +21,7 @@
             <td><span style="color: white">用户名</span></td>
             <td><span style="color: white">密码</span></td>
             <td><span style="color: white">电话</span></td>
-            <td>&nbsp;</td>
+            <td><span style="color: white">地址</span></td>
             <td>&nbsp;</td>
         </tr>
         </thead>

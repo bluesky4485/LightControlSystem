@@ -160,7 +160,7 @@ public class LightControl {
         //对单灯控制器的所有组操作
         if(Strings.isNullOrEmpty(groupNo) && Strings.isNullOrEmpty(dengNo)){
             codeNo = "01";
-            data =String.valueOf(Integer.parseInt(bright)*255/100);
+            data =Integer.toHexString(Integer.parseInt(bright)*255/100);
             switch(data.length()){
                 case 1:data = "0" + data;
                     break;
