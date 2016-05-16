@@ -99,7 +99,7 @@
     <div class="div3" >
         <button id="sub"  class=" btn-primary" ><h4>提交</h4></button>
     </div>
-    <div style="float:left;width:100%;margin-top: 5px;">
+    <div style="float:left;width:100%;margin-top: 5px;min-width: 700px;">
         <table style="width: 100%;">
             <thead>
             <tr style="background-color: #215867;text-align: center;">

@@ -166,6 +166,7 @@ public class LightControl {
                     break;
             }
             queryLight.setDeviceId(deviceNo);
+            System.out.print(deviceNo);
             List<Light> lights = lightService.findLight(queryLight);
             if(lights != null){
                 for(Light light : lights){
@@ -177,11 +178,18 @@ public class LightControl {
             queryLight.setDeviceId(deviceNo);
             String []groupNos = groupNo.split(";");
             for(String gs : groupNos){
-                data = data +gs+Integer.toHexString(Integer.parseInt(bright)*255/100);
-                switch(data.length()){
-                    case 1:data = "0" + data;
+                String brightHex = Integer.toHexString(Integer.parseInt(bright)*255/100);
+                switch(brightHex.length()){
+                    case 1:brightHex = "0" + brightHex;
                         break;
                 }
+                String gsHex = Integer.toHexString(Integer.parseInt(gs));
+                switch(gsHex.length()){
+                    case 1:gsHex = "0" + gsHex;
+                        break;
+                }
+                data = data + gsHex + brightHex;
+
 //                System.out.println(data);
                 if(gs!=""){
                     queryLight.setGroupId(gs);
@@ -194,7 +202,7 @@ public class LightControl {
                 }
 
             }
-        }else {                         //dui dan ge dan deng kong zhi qi duo zu zhong de duo tai deng cao zuo
+        }else {                         //对单个单灯控制器多组中的多台灯操作
             codeNo = "04";
             queryLight.setDeviceId(deviceNo);
             String []groupNos = groupNo.split(";");
@@ -208,7 +216,12 @@ public class LightControl {
                         case 1:br = "0" + br;
                             break;
                     }
-                    tmp += gs+ds+br;
+                    String gsHex = Integer.toHexString(Integer.parseInt(gs));
+                    switch(gsHex.length()){
+                        case 1:gsHex = "0" + gsHex;
+                            break;
+                    }
+                    tmp += gsHex+ds+br;
                     queryLight.setInGroupId(ds);
                     List<Light> lights = lightService.findLight(queryLight);
                     if(lights != null){

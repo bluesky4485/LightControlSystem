@@ -5,6 +5,8 @@ body{
     height: 100px;
     margin-top: 10px;
     width: 100%;
+    min-width: 80%;
+    position:relative;
     /*background-color: #0c173b;*/
 }
 .div1_1{
@@ -27,11 +29,12 @@ body{
 /*}*/
 .div1_3{
     width:70%;
-    min-width: 500px;
+    min-width: 620px;
     height:100px;
     float: left;
-    /*background-color: red;*/
-    margin-left: 10px;
+    margin-left: 207px;
+    position: absolute;
+
 }
 .div1_3_1{
     width: 30%;
@@ -39,6 +42,7 @@ body{
     height:100px;
     float: left;
     border: 1px solid gainsboro;
+    position: absolute;
 }
 .div1311{
     margin-left: 13px;
@@ -48,8 +52,9 @@ body{
     min-width: 290px;
     height:100px;
     float: left;
-    margin-left: 10px;
+    margin-left: 330px;
     border: 1px solid gainsboro;
+    position: absolute;
     /*background-color: red;*/
 }
 .div1321{
@@ -60,7 +65,9 @@ body{
 
 }
 .div2{
-    height: 130px;margin-top: 5px;
+    height: 130px;
+    margin-top: 5px;
+    position:relative;
 }
 .div2_1{
     width: 15%;
@@ -75,8 +82,9 @@ body{
     width:50%;
     min-width: 800px;
     height:100px;
-    margin-left: 10px;
+    margin-left: 207px;
     border: 1px solid gainsboro;
+    position: absolute;
     /*background-color: #0c173b;*/
 }
 .div2_2_1{

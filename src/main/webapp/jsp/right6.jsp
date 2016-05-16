@@ -10,11 +10,11 @@
 
 </head>
 <body style="text-align: center">
-<div style="margin: 0 auto;width: 70%">
+<div style="margin: 0 auto;width: 70%;min-width: 700px;">
     <div>
     <a href="<c:url value="/jsp/adduser.jsp"/>"><h4 style="text-decoration:underline">增加用户</h4></a>
     </div>
-    <table style="width:600px;margin-left: 250px;border: 1px solid">
+    <table style="width:80%;margin-left:10%;border: 1px solid">
         <thead>
         <tr style="background-color: #215867;text-align: center;">
             <td><span style="color: white">#</span></td>

@@ -36,9 +36,9 @@ $(function(){
         var open_time= $('input:text[name=act_start_time]').val();
         var close_time= $('input:text[name=act_stop_time]').val();
         var all=$('input:radio[name=suoyou]:checked').val();//所有：1
-        var num_jizhong = $('input:text[id=jsrtxt3]').val();
-        var num_zu = $('input:text[id=jsrtxt]').val();
-        var num_deng = $('input:text[id=jsrtxt2]').val();
+        var num_jizhong = $('input:text[id=jizhongtxt]').val();
+        var num_zu = $('input:text[id=zutxt]').val();
+        var num_deng = $('input:text[id=lighttxt]').val();
         var url;
         if(control==0){              //即时控制
             if(all==1){           //所有的灯
@@ -187,6 +187,9 @@ function  succFunction2(data) {
         // var inGroupIdHex = Integer.parseInt(inGroupId,16);
 
         deviceIdArr[index] = deviceId;
+        switch (groupId.length){
+            case 1: groupId = "0"+groupId;
+        }
         groupIdArr[index] = groupId;
         inGroupIdArr[index] = inGroupId;
 

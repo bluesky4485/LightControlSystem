@@ -3,7 +3,6 @@
  */
 $(function(){
     getjson();
-    setInterval(getjson, 5000);
 });
 
 function createXmlHttpRequest(){
@@ -80,6 +79,7 @@ function getjson(){
             deletebutton.click(function(event){
                 if(authority==1){
                     deletecmd(userId);
+                    setTimeout(getjson(),500);
                 }
             })
 
