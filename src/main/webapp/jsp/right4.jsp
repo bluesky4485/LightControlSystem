@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>高杆灯</title>
+    <title>操作查询</title>
     <script src="../js/jquery/jquery-1.9.1.min.js"></script>
     <link href="../css/admin.css"  rel="stylesheet"/>
     <link href="../css/jquery-ui2.css" rel="stylesheet"  />
@@ -27,8 +27,9 @@
             <input  name="cha_start_time" id="cha_start_time" type="text" class="mys" value="" placeholder="起始时间"  style="cursor:pointer;height: 20px;width:20%;"/>
             <input  name="cha_stop_time" id="cha_stop_time" type="text" class="mys" value="" placeholder="结束时间"  style="cursor:pointer;height: 20px;width:20%;"/>
         </div>
-        <input type="button" value="查询" style="font-size: large" onclick="findData(document.getElementById('cha_start_time').value,document.getElementById('cha_stop_time').value)"/>
-
+        <div style="margin-top: 5px;">
+        <input type="button" value="点击查询" style="font-size: large;color: #1a8cff" onclick="findData(document.getElementById('cha_start_time').value,document.getElementById('cha_stop_time').value)"/>
+        </div>
 
     </div>
     <div>

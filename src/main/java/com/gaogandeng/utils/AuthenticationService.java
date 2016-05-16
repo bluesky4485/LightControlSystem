@@ -43,6 +43,7 @@ public class AuthenticationService {
         String password = userForm.getPassword();
         for(User user:userList){
             if(user.getUserName().equals(name) && user.getPassword().equals(password)){
+                userForm.setAuthority(user.getAuthority());
                 return true;
             }
 

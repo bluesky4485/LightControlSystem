@@ -40,6 +40,7 @@ public class UserController {
         if(right){
             User user = new User();
             user.setUserName(userForm.getUserName());
+            user.setAuthority(userForm.getAuthority());
             model.addAttribute("user",user);
             return "jiemian";
         }else{

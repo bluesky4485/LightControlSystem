@@ -1,5 +1,5 @@
-<%--elvariable id="user" type="com.gaogandeng.model.User" --%>
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +21,12 @@
                 <h2 style="color: honeydew;text-align: center">大场景智能照明系统</h2>
             </div>
             <!--上右-->
-            <div style="float:right; margin-top: 35px;">
+            <div style="float:right; margin-top: 35px;margin-right: 30px;">
                 <table>
                     <tr>
-                        <td><h5 style="color:white">你好,</h5></td>
-                        <td><h5 style="color:red">${user.userName}!&nbsp;&nbsp;</h5></td>
-                        <td><a href="/"><h5 style="color: white">退出&nbsp;</h5></a></td>
+                        <td><h5 style="color:white;font-size: medium">你好,</h5>
+                        <td><h5 style="color:#e4b9b9;font-size: medium">${user.userName}!&nbsp;&nbsp;</h5></td>
+                        <td><a href="/"><span style="color: white;font-size: medium" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='white'">退出&nbsp;</span></a></td>
                     </tr>
                 </table>
             </div>
@@ -60,11 +60,29 @@
                         <%--<h4>管理策略</h4>--%>
                     <%--</button>--%>
                 <%--</a><br>--%>
-                <a href="jsp/right6.jsp" target="right">
-                    <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
-                        <h4>系统管理</h4>
-                    </button>
-                </a><br>
+
+                <%--<div <c:if test="${user.authority!= '1'}"> style="display: block;height:10%" </c:if><c:if test="${user.authority == '1' }">style="display: none" </c:if>>--%>
+                <%--<c:if test="${user.authority!= '1'}">--%>
+                    <%--<a href="jsp/right6.jsp" target="right" style="">--%>
+                        <%--<button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">--%>
+                            <%--<h4>系统管理</h4>--%>
+                        <%--</button>--%>
+                    <%--</a><br>--%>
+                <%--</c:if>--%>
+
+                <c:choose>
+                    <c:when test="${user.authority == 0}">
+                        <a href="jsp/right6.jsp" target="right" style="">
+                            <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
+                                <h4>系统管理</h4>
+                            </button>
+                        </a><br>
+                    </c:when>
+                    <c:otherwise>
+                    </c:otherwise>
+                </c:choose>
+
+                <%--</div>--%>
             </div>
     </div>
     <!--中右-->

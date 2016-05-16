@@ -213,13 +213,13 @@ function  succFunction2(data) {
     deviceIdArr.sort();
 
     for(var i=0;i<deviceIdArr.length;i++){
-        deviceString+="<input type='radio' name='device' value="+deviceIdArr[i]+" />"+deviceIdArr[i];
+        deviceString+="<input type='radio' name='device' value="+deviceIdArr[i]+" />"+deviceIdArr[i]+"&nbsp;&nbsp;&nbsp;&nbsp;";
     }
 
     var diajiz = $.dialog(
         {
             title:"集中控制器",
-            width: "340px",
+            width: 340,
             // height:"300px",
             content:deviceString,
             close: function () {
@@ -232,8 +232,9 @@ function  succFunction2(data) {
 
     $("#jizhong").click(function () {
         diajiz.show();
+        diazu.hide();
+        dialight.hide();
     });
-
 
 
 
@@ -265,14 +266,13 @@ function  succFunction2(data) {
     groupIdArr.sort();
 
     for(var ii=0;ii<groupIdArr.length;ii++){
-        groupString+="<input type='checkbox' name='group' value="+groupIdArr[ii]+" />"+groupIdArr[ii];
+        groupString+="<input type='checkbox' name='group' value="+groupIdArr[ii]+" />"+groupIdArr[ii]+"&nbsp;&nbsp;&nbsp;&nbsp;";
     }
 
     var diazu = $.dialog(
         {
             title:"组",
-            width: "340px",
-            // height:"300px",
+            width: 340,
             content:groupString,
             close: function () {
                 this.hide();
@@ -284,6 +284,8 @@ function  succFunction2(data) {
 
     $("#zu").click(function () {
         diazu.show();
+        diajiz.hide();
+        dialight.hide();
     });
 
     $("input[name=group]").each(function(){//给所有的input绑定事件
@@ -313,13 +315,13 @@ function  succFunction2(data) {
     inGroupIdArr.sort();
 
     for(var t=0;t<inGroupIdArr.length;t++){
-        inGroupString+="<input type='checkbox' name='light' value="+inGroupIdArr[t]+" />"+inGroupIdArr[t];
+        inGroupString+="<input type='checkbox' name='light' value="+inGroupIdArr[t]+" />"+inGroupIdArr[t]+"&nbsp;&nbsp;&nbsp;&nbsp;";
     }
 
     var dialight = $.dialog(
         {
             title:"灯",
-            width: "340px",
+            width: 340,
             // height:"300px",
             content:inGroupString,
             close: function () {
@@ -332,6 +334,8 @@ function  succFunction2(data) {
 
     $("#light").click(function () {
         dialight.show();
+        diazu.hide();
+        diajiz.hide();
     });
 
     $("input[name=light]").each(function(){//给所有的input绑定事件
@@ -343,5 +347,16 @@ function  succFunction2(data) {
             $("#lighttxt").val(light.join(";"));//将数据值联合字符串给显示对象附值
         })
     })
+
+    // document.onclick = function(){
+    //     diajiz.hide();
+    //     diazu.hide();
+    //     dialight.hide();
+    // };
+    // $(document).click(function () {
+    //     diajiz.hide();
+    //     diazu.hide();
+    //     dialight.hide();
+    // })
 }
 

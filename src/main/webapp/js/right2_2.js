@@ -23,22 +23,34 @@ function succFunction(tt) {
     $("#list").html('');
     var jsonData = eval(tt);
     var fatherObj = $("#list");
-    // 按任务时间排序
-    var sortBy = function (filed, rev, primer) {
-        rev = (rev) ? -1 : 1;
-        return function (a, b) {
-            a = a[filed];
-            b = b[filed];
-            if (typeof (primer) != 'undefined') {
-                a = primer(a);
-                b = primer(b);
+
+    jsonData.sort(function (a,b) {
+        if(a.deviceId==b.deviceId){
+            if(a.groupId==b.groupId){
+                return a.inGroupId-b.inGroupId;
+            }else{
+                return a.groupId-b.groupId;
             }
-            if (a < b) { return rev * -1; }
-            if (a > b) { return rev * 1; }
-            return 1;
+        }else{
+            return a.deviceId-b.deviceId;
         }
-    };
-    jsonData.sort(sortBy('infoTime', false,String));
+    })
+    // // 按任务时间排序
+    // var sortBy = function (filed, rev, primer) {
+    //     rev = (rev) ? -1 : 1;
+    //     return function (a, b) {
+    //         a = a[filed];
+    //         b = b[filed];
+    //         if (typeof (primer) != 'undefined') {
+    //             a = primer(a);
+    //             b = primer(b);
+    //         }
+    //         if (a < b) { return rev * -1; }
+    //         if (a > b) { return rev * 1; }
+    //         return 1;
+    //     }
+    // };
+    // jsonData.sort(sortBy('inGroupId',false,String));
 
     $.each(jsonData, function (index,item) {
         //循环获取数据
@@ -59,6 +71,7 @@ function succFunction(tt) {
         var date =new Date(parseInt(infoTime));
         var curDate=date.toLocaleString().replace(/年|月/g,"-").replace(/日/g," ");
 
+        var bright2 = Number(bright)*100/255;
 
         var lineObj = $("<tr style='border: 1px solid skyblue'></tr>")
 
@@ -87,7 +100,7 @@ function succFunction(tt) {
         powerObj.html(power);
 
         var brightObj=$("<td></td>")
-        brightObj.html(bright);
+        brightObj.html(bright2);
 
         var enviBrightObj=$("<td></td>")
         enviBrightObj.html(enviBright);
@@ -114,9 +127,9 @@ function succFunction(tt) {
         powerObj.appendTo(lineObj);
         brightObj.appendTo(lineObj);
         enviBrightObj.appendTo(lineObj);
-        temObj.appendTo(lineObj);
-        tem1Obj.appendTo(lineObj);
-        tem2Obj.appendTo(lineObj);
+        // temObj.appendTo(lineObj);
+        // tem1Obj.appendTo(lineObj);
+        // tem2Obj.appendTo(lineObj);
         curDateObj.appendTo(lineObj);
         lineObj.appendTo(fatherObj);
 

@@ -33,14 +33,6 @@
                 <input id="controlnow" class="flo1" type="radio" name="control"  value="0">
                 <h4 class="flo1">即时控制</h4>
             </div>
-            <%--<div class="div1_2" id="switch">--%>
-                <%--<h4><span class="text-primary">&nbsp;&nbsp;&nbsp;--%>
-                                <%--灯的动作</span></h4><br>--%>
-                <%--<input id="openlight" class="flo1" type="radio" name="switch1" value="1" checked="checked" >--%>
-                <%--<h4 class="flo1">开灯&nbsp;</h4>--%>
-                <%--<input id="closelight" class="flo1" type="radio" name="switch1" value="0" >--%>
-                <%--<h4 class="flo1">关灯</h4>--%>
-            <%--</div>--%>
             <div class="div1_3">
                 <div id="bright" class="div1_3_1">
                     <h4 class="text-primary" style="text-align: center">灯的亮度(关灯为0)</h4><br>
@@ -110,11 +102,11 @@
                 <td><span style="color: white">电压(V)  </span></td>
                 <td><span style="color: white">电流(A)  </span></td>
                 <td><span style="color: white">功率(W)  </span></td>
-                <td><span style="color: white">亮度     </span></td>
-                <td><span style="color: white">环境亮度 </span></td>
-                <td><span style="color: white">温度0    </span></td>
-                <td><span style="color: white">温度1    </span></td>
-                <td><span style="color: white">温度2    </span></td>
+                <td><span style="color: white">亮度(%)  </span></td>
+                <td><span style="color: white">环境亮度  </span></td>
+                <%--<td><span style="color: white">温度0    </span></td>--%>
+                <%--<td><span style="color: white">温度1    </span></td>--%>
+                <%--<td><span style="color: white">温度2    </span></td>--%>
                 <td><span style="color: white">时间     </span></td>
             </tr>
             </thead>

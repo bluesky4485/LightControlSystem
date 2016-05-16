@@ -2,8 +2,10 @@
  * Created by chgu1_000 on 2016/3/17.
  */
 
+
 $(function(){
 
+        
         $("#hide").click(function(){
 
             // if($("#left").css('width') =='98%'){

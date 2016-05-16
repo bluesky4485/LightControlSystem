@@ -37,7 +37,7 @@ body{
 
 }
 .div1_3_1{
-    width: 30%;
+    width: 34%;
     min-width: 325px;
     height:100px;
     float: left;
@@ -45,23 +45,23 @@ body{
     position: absolute;
 }
 .div1311{
-    margin-left: 13px;
+    margin-left: 30px;
 }
 .div1_3_2{
     width: 20%;
     min-width: 290px;
     height:100px;
     float: left;
-    margin-left: 330px;
+    margin-left: 360px;
     border: 1px solid gainsboro;
     position: absolute;
     /*background-color: red;*/
 }
 .div1321{
-    margin-top:10px;
+    margin-top:6px;
     width: 80%;
     min-width: 200px;
-    float: left;
+    margin-left: 10px;
 
 }
 .div2{
@@ -73,16 +73,17 @@ body{
     width: 15%;
     height:100px;
     min-width: 196px;
+    margin-top: 5px;
     float: left;
     /*margin-left:30px;*/
     border: 1px solid gainsboro;
 }
 .div2_2{
-    float: left;
     width:50%;
-    min-width: 800px;
+    min-width: 700px;
     height:100px;
     margin-left: 207px;
+    margin-top: 5px;
     border: 1px solid gainsboro;
     position: absolute;
     /*background-color: #0c173b;*/
@@ -90,6 +91,7 @@ body{
 .div2_2_1{
     float: left;
     margin-top: 38px;
+    margin-left: 10px;
     width: 30%;
     min-width: 150px;
     /*background-color: cornflowerblue;*/
