@@ -33,7 +33,7 @@
     </div>
     <!--中左-->
     <div id="left1"style="float:left;height:85%;width:15%;min-width:150px;position: absolute;">
-            <input id="hide" type="button" value="<<" class="btn-primary" style="width:98%;"/>
+            <%--<input id="hide" type="button" value="<<" class="btn-primary" style="width:98%;"/>--%>
             <div id="left" style="width:98%;height:90%;min-height: 80%;;">
                 <a href="jsp/right1.jsp" target="right">
                     <button type="button" class="btn-primary" style="width:100%;height: 10%;min-height: 50px;">
@@ -55,20 +55,12 @@
                         <h4>操作查询</h4>
                     </button>
                 </a><br>
-                <%--<a href="jsp/right5.jsp" target="right">--%>
-                    <%--<button type="button" class="btn-primary" style="width: 180px;height: 60px;">--%>
-                        <%--<h4>管理策略</h4>--%>
-                    <%--</button>--%>
-                <%--</a><br>--%>
 
-                <%--<div <c:if test="${user.authority!= '1'}"> style="display: block;height:10%" </c:if><c:if test="${user.authority == '1' }">style="display: none" </c:if>>--%>
-                <%--<c:if test="${user.authority!= '1'}">--%>
-                    <%--<a href="jsp/right6.jsp" target="right" style="">--%>
-                        <%--<button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">--%>
-                            <%--<h4>系统管理</h4>--%>
-                        <%--</button>--%>
-                    <%--</a><br>--%>
-                <%--</c:if>--%>
+                <a href="jsp/right5.jsp" target="right">
+                    <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
+                        <h4>区域分组</h4>
+                    </button>
+                </a><br>
 
                 <c:choose>
                     <c:when test="${user.authority == 0}">
@@ -81,8 +73,6 @@
                     <c:otherwise>
                     </c:otherwise>
                 </c:choose>
-
-                <%--</div>--%>
             </div>
     </div>
     <!--中右-->

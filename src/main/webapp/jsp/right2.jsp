@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div id="light_time" class="div1_3_2" >
-                    <h4 class="text-primary" style="text-align: center">任务时间(24小时内)</h4>
+                    <h4 class="text-primary" style="text-align: center">任务时间</h4>
                     <div class="div1321">
                         <input name="act_start_time" id="act_start_time" type="text" class="text-box" value="" placeholder="开灯时间" title="开始时间≥当前时间"  style="cursor:pointer;"/>
                         <input name="act_stop_time" id="act_stop_time" type="text" class="text-box" value="" placeholder="关灯时间" title="结束时间>开始时间"  style="cursor:pointer;"/>

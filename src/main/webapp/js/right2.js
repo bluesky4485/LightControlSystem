@@ -196,6 +196,8 @@ function  succFunction2(data) {
 
     });
 
+    
+
     /**
      * 集中控制器
      */
@@ -222,6 +224,7 @@ function  succFunction2(data) {
             width: 340,
             // height:"300px",
             content:deviceString,
+            //id:diajizhong,
             close: function () {
                 this.hide();
                 return false;
@@ -235,6 +238,8 @@ function  succFunction2(data) {
         diazu.hide();
         dialight.hide();
     });
+
+    
 
 
 
@@ -348,6 +353,24 @@ function  succFunction2(data) {
         })
     })
 
+    // $(document).click(function(){
+    //
+    //     $("#diajizhong").click(function(){
+    //         return;
+    //     })
+    //     diajiz.click(function(){
+    //         return;
+    //     })
+    //     diazu.click(function(){
+    //         return;
+    //     })
+    //     dialight.click(function(){
+    //         return;
+    //     })
+    //     $("#diajizhong").close();
+    //     diazu.close();
+    //     dialight.close();
+    // })
     // document.onclick = function(){
     //     diajiz.hide();
     //     diazu.hide();

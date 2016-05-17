@@ -38,7 +38,7 @@ body{
 }
 .div1_3_1{
     width: 34%;
-    min-width: 325px;
+    min-width: 340px;
     height:100px;
     float: left;
     border: 1px solid gainsboro;
@@ -61,7 +61,7 @@ body{
     margin-top:6px;
     width: 80%;
     min-width: 200px;
-    margin-left: 10px;
+    margin-left: 4%;
 
 }
 .div2{

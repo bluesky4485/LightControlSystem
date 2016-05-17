@@ -88,7 +88,7 @@ function findData(start_time,stop_time){
             brightObj.appendTo(lineObj);
 
             var devicetableObj=$("<table></table>");
-            var devicecolObj=$("<td align='center'></td>");
+            var devicecolObj=$("<td align='center' style='border:1px solid skyblue;'></td>");
             for(var i=0;i<item.lights.length;i++){
                 var deviceId= item.lights[i].deviceId;
                 var deviceIdObj=$("<tr></tr>");
@@ -98,7 +98,7 @@ function findData(start_time,stop_time){
                 devicecolObj.appendTo(lineObj);
             }
             var grouptableObj=$("<table></table>");
-            var groupcolObj=$("<td align='center'></td>");
+            var groupcolObj=$("<td align='center' style='border:1px solid skyblue;'></td>");
             for(var i=0;i<item.lights.length;i++){
                 var groupIdObj=$("<tr></tr>");
                 var groupId = item.lights[i].groupId;
@@ -109,7 +109,7 @@ function findData(start_time,stop_time){
 
             }
             var ingrouptableObj=$("<table></table>");
-            var ingroupcolObj=$("<td align='center'></td>");
+            var ingroupcolObj=$("<td align='center' style='border:1px solid skyblue;'></td>");
             for(var i=0;i<item.lights.length;i++){
                 var inGroupIdObj=$("<tr></tr>");
                 var inGroupId = item.lights[i].inGroupId;

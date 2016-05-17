@@ -71,7 +71,7 @@ function succFunction(tt) {
         var date =new Date(parseInt(infoTime));
         var curDate=date.toLocaleString().replace(/年|月/g,"-").replace(/日/g," ");
 
-        var bright2 = Number(bright)*100/255;
+        // var bright2 = Number(bright)*100/255;
 
         var lineObj = $("<tr style='border: 1px solid skyblue'></tr>")
 
@@ -100,7 +100,7 @@ function succFunction(tt) {
         powerObj.html(power);
 
         var brightObj=$("<td></td>")
-        brightObj.html(bright2);
+        brightObj.html(bright);
 
         var enviBrightObj=$("<td></td>")
         enviBrightObj.html(enviBright);
