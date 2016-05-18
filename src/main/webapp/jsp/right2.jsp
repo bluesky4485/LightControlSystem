@@ -13,7 +13,7 @@
     <link href="../css/right2.css" rel="stylesheet"  />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/right2_2.js"></script>
+    <%--<script src="../js/right2_2.js"></script>--%>
     <script src="../js/right2.js"></script>
     <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
     <script src="../js/jquery/jquery.range.js"></script>
@@ -23,7 +23,7 @@
     <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
-<div style="margin: 0 auto;width:95%;text-align: center;">
+<div style="margin: 0 auto;width: 70%">
     <div style="margin:0 auto">
         <div class="div1">
             <div class="div1_1">
@@ -91,29 +91,29 @@
     <div class="div3" >
         <button id="sub"  class=" btn-primary" ><h4>提交</h4></button>
     </div>
-    <div style="float:left;width:100%;margin-top: 5px;min-width: 700px;">
-        <table style="width: 100%;">
-            <thead>
-            <tr style="background-color: #215867;text-align: center;">
-                <td><span style="color: white">#        </span></td>
-                <td><span style="color: white">集中控制器</span></td>
-                <td><span style="color: white">组号     </span></td>
-                <td><span style="color: white">灯号     </span></td>
-                <td><span style="color: white">电压(V)  </span></td>
-                <td><span style="color: white">电流(A)  </span></td>
-                <td><span style="color: white">功率(W)  </span></td>
-                <td><span style="color: white">亮度(%)  </span></td>
-                <td><span style="color: white">环境亮度  </span></td>
-                <%--<td><span style="color: white">温度0    </span></td>--%>
-                <%--<td><span style="color: white">温度1    </span></td>--%>
-                <%--<td><span style="color: white">温度2    </span></td>--%>
-                <td><span style="color: white">时间     </span></td>
-            </tr>
-            </thead>
-            <tbody id="list" style="text-align: center">
-            </tbody>
-        </table>
-    </div>
+    <%--<div style="float:left;width:100%;margin-top: 5px;min-width: 700px;">--%>
+        <%--<table style="width: 100%;">--%>
+            <%--<thead>--%>
+            <%--<tr style="background-color: #215867;text-align: center;">--%>
+                <%--<td><span style="color: white">#        </span></td>--%>
+                <%--<td><span style="color: white">集中控制器</span></td>--%>
+                <%--<td><span style="color: white">组号     </span></td>--%>
+                <%--<td><span style="color: white">灯号     </span></td>--%>
+                <%--<td><span style="color: white">电压(V)  </span></td>--%>
+                <%--<td><span style="color: white">电流(A)  </span></td>--%>
+                <%--<td><span style="color: white">功率(W)  </span></td>--%>
+                <%--<td><span style="color: white">亮度(%)  </span></td>--%>
+                <%--<td><span style="color: white">环境亮度  </span></td>--%>
+                <%--&lt;%&ndash;<td><span style="color: white">温度0    </span></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><span style="color: white">温度1    </span></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><span style="color: white">温度2    </span></td>&ndash;%&gt;--%>
+                <%--<td><span style="color: white">时间     </span></td>--%>
+            <%--</tr>--%>
+            <%--</thead>--%>
+            <%--<tbody id="list" style="text-align: center">--%>
+            <%--</tbody>--%>
+        <%--</table>--%>
+    <%--</div>--%>
 
 
 </div>

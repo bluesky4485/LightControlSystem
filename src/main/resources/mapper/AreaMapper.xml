@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaogandeng.dao.AreaMapper">
+
+    <resultMap type="com.gaogandeng.model.Area" id="AreaResult">
+        <id property="areaId" column="area_id"/>
+        <result property="areaName" column="area_name"/>
+        <result property="lightsId" column="lights_id"/>
+    </resultMap>
+
+
+
+    <insert id="insertArea" parameterType="Area" useGeneratedKeys="true" keyProperty="area_id">
+        INSERT INTO areas (area_id, area_name,lights_id ) VALUES (
+        #{areaId}, #{areaName},#{lightsId}
+        )
+    </insert>
+
+    <select id="findAllAreas" resultMap="AreaResult">
+        SELECT * FROM areas
+    </select>
+
+
+
+</mapper>

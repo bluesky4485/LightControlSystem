@@ -13,60 +13,78 @@
     <script src="../js/jiemian.js"></script>
 </head>
 <body>
-<div style="position: relative; height:100%;width:100%;background-repeat:no-repeat;">
+<div class="div1">
     <!--上部-->
-    <div style=" height:90px;position: relative;">
-            <!--上左-->
-            <div style="margin-left:15%;margin-top: 15px;position: absolute;">
-                <h2 style="color: honeydew;text-align: center">大场景智能照明系统</h2>
-            </div>
-            <!--上右-->
-            <div style="float:right; margin-top: 35px;margin-right: 30px;">
+    <div class="divtop">
+        <div class="images-wrapper">
+            <img src="../img/top.jpg" style="height: 90px;width: 100%;"/>
+            <div class="images-content">
                 <table>
                     <tr>
-                        <td><h5 style="color:white;font-size: medium">你好,</h5>
-                        <td><h5 style="color:#e4b9b9;font-size: medium">${user.userName}!&nbsp;&nbsp;</h5></td>
-                        <td><a href="/"><span style="color: white;font-size: medium" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='white'">退出&nbsp;</span></a></td>
+                        <td><h5 class="text1">你好,</h5>
+                        <td>
+                            <h5 style="color:#ff4433;font-size: medium">
+                            ${user.userName}!&nbsp;&nbsp;
+                            </h5>
+                        </td>
+                        <td>
+                            <a href="/">
+                            <span  class="text1" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='white'">
+                                退出&nbsp;
+                            </span>
+                            </a>
+                        </td>
                     </tr>
                 </table>
             </div>
+        </div>
     </div>
     <!--中左-->
-    <div id="left1"style="float:left;height:85%;width:15%;min-width:150px;position: absolute;">
-            <%--<input id="hide" type="button" value="<<" class="btn-primary" style="width:98%;"/>--%>
+    <div id="left1" class="divmid">
             <div id="left" style="width:98%;height:90%;min-height: 80%;;">
                 <a href="jsp/right1.jsp" target="right">
-                    <button type="button" class="btn-primary" style="width:100%;height: 10%;min-height: 50px;">
-                        <h4>综合首页</h4>
+                    <button type="button" class="mybtn">
+                        <img src="../img/1.png" style="width:40px" />综合首页
+                    </button>
+                </a><br>
+                <a href="jsp/map.jsp" target="right">
+                    <button type="button" class="mybtn">
+                        <img src="../img/2.png" style="width:40px" /><font>地图监控</font>
                     </button>
                 </a><br>
                 <a href="jsp/right2.jsp" target="right">
-                    <button type="button" class="btn-primary" style="width:100%;height: 10%;min-height: 50px;">
-                        <h4>灯具控制</h4>
+                    <button type="button" class="mybtn">
+                        <img src="../img/3.png" style="width:40px" /><font>控制策略</font>
                     </button>
                 </a><br>
                 <a href="jsp/right3.jsp" target="right">
-                    <button id="buttonwarn" class="btn-primary" style="width:100%;height: 10%;min-height: 50px;">
-                        <h4>故障报警</h4>
+                    <button id="buttonwarn" class="mybtn">
+                        <img src="../img/4.png" style="width:40px" /><font>故障报警</font>
                     </button>
                 </a><br>
                 <a href="jsp/right4.jsp" target="right">
-                    <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
-                        <h4>操作查询</h4>
+                    <button type="button" class="mybtn">
+                        <img src="../img/5.png" style="width:40px" /><font>操作查询</font>
                     </button>
                 </a><br>
 
                 <a href="jsp/right5.jsp" target="right">
-                    <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
-                        <h4>区域分组</h4>
+                    <button type="button" class="mybtn">
+                        <img src="../img/6.png" style="width:40px" /><font>区域分组</font>
+                    </button>
+                </a><br>
+
+                <a href="jsp/copy.jsp" target="right">
+                    <button type="button" class="mybtn">
+                        <img src="../img/7.png" style="width:40px" /><font>备份还原</font>
                     </button>
                 </a><br>
 
                 <c:choose>
                     <c:when test="${user.authority == 0}">
                         <a href="jsp/right6.jsp" target="right" style="">
-                            <button type="button" class="btn-primary" style="width:100%;height:10%;min-height: 50px;">
-                                <h4>系统管理</h4>
+                            <button type="button"  class="mybtn">
+                                <img src="../img/8.png" style="width:30px" /><font>系统管理</font>
                             </button>
                         </a><br>
                     </c:when>
@@ -76,14 +94,14 @@
             </div>
     </div>
     <!--中右-->
-    <div style="margin-left:15%;height:85%;width:85%;position:absolute;">
-            <iframe name="right" style="height:98%;width:98%;margin:0 auto;" src="jsp/right1.jsp">
+    <div class="divmid-right">
+            <iframe name="right" class="iframe" src="jsp/right1.jsp">
             </iframe>
     </div>
     <!--底部-->
-    <div class="navbar-fixed-bottom" style="height:5%;">
-            <h4><p class="text-center" style="color:whitesmoke;">高杆灯照明系统</p></h4>
-    </div>
+    <%--<div class="navbar-fixed-bottom" style="height:5%;">--%>
+            <%--<h4><p class="text-center" style="color:#2b52cf;">高杆灯照明系统</p></h4>--%>
+    <%--</div>--%>
 </div>
 </body>
 </html>

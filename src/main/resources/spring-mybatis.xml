@@ -59,7 +59,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="typeAliases"
-                  value="com.gaogandeng.model.ControlLog, com.gaogandeng.model.Light, com.gaogandeng.model.LightStatusLog,
+                  value="com.gaogandeng.model.ControlLog,com.gaogandeng.model.Area, com.gaogandeng.model.Light, com.gaogandeng.model.LightStatusLog,
                   com.gaogandeng.model.User, com.gaogandeng.model.WarningLog, com.gaogandeng.model.LightControlLog"/>
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath*:mapper/*.xml"></property>

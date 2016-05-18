@@ -10,18 +10,11 @@
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/right3.js"></script>
 </head>
-<script>
-    function confirmall(){
-        var col = document.getElementById("tab").rows.length;
-        for(var i=1;i<col;i++){
-            var value = $("#tab").find("tr").eq(i).find("td").eq(0).text();
-            cmd(value);
-        }
-        alert("已全部确认");
-    }
-</script>
 <body style="text-align: center;width: 100%">
 <div style="margin: 0 auto;width: 70%">
+    <div style="margin-top: 10px;">
+        <font style="color: #1a8cff;text-align: center;font-size: x-large;">故障报警</font>
+    </div>
     <div class="div1">
         <table class="table1" id="tab">
             <thead style="text-align: center">

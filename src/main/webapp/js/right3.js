@@ -1,10 +1,19 @@
 /**
  * Created by chgu1_000 on 2016/3/23.
  */
+function confirmall(){
+    var col = document.getElementById("tab").rows.length;
+    for(var i=1;i<col;i++){
+        var value = $("#tab").find("tr").eq(i).find("td").eq(0).text();
+        cmd(value);
+        setTimeout(getjson(),800);
+    }
+    alert("已全部确认");
+}
 
 $(function(){
     getjson();
-    setInterval(getjson, 1000);
+    // setInterval(getjson, 500);
 });
 
 function createXmlHttpRequest(){
@@ -95,6 +104,7 @@ function getjson(){
             var button = $("<td><button>"+"确认"+"</button></td>")
             button.click(function(event){
                 cmd(id_only);
+                setTimeout(getjson(),800);
             })
             idOnlyObj.appendTo(lineObj);
             numObj.appendTo(lineObj);
