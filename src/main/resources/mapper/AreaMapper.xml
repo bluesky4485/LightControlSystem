@@ -22,6 +22,10 @@
         SELECT * FROM areas
     </select>
 
+    <delete id="deleteAreaById" parameterType="Integer">
+        DELETE FROM areas WHERE  area_id = #{areaId}
+    </delete>
+
 
 
 </mapper>

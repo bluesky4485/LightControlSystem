@@ -1,7 +1,9 @@
 package com.gaogandeng.test;
 
 import com.gaogandeng.model.Area;
+import com.gaogandeng.model.Light;
 import com.gaogandeng.service.AreaService;
+import com.gaogandeng.utils.AreaUtilService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,12 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:spring.xml", "classpath:spring-mybatis.xml"})
 public class AreaTest {
     private AreaService areaService;
+    private AreaUtilService areaUtilService;
+
+    @Autowired
+    public void setAreaUtilService(AreaUtilService areaUtilService) {
+        this.areaUtilService = areaUtilService;
+    }
 
     @Autowired
     public void setAreaService(AreaService areaService) {
@@ -25,16 +33,28 @@ public class AreaTest {
 
     @Test
     public void insertArea(){
-        Area area = new Area(2,"fff","23;34");
+        Area area = new Area(2,"ff","78;76");
         areaService.insertArea(area);
     }
 
     @Test
     public void findAllAreas(){
-        List<Area> areaList = areaService.findAllAreas();
-        for(Area area : areaList){
-            System.out.println(area.getAreaId()+" "+area.getAreaName()+" "+area.getLightsId());
-
+        List<Area> areaList = areaUtilService.queryAllAreas();
+        for(Area area:areaList){
+            System.out.print(area.getAreaId()+" ");
+            System.out.print(area.getAreaName()+" ");
+            System.out.println(area.getLightsId()+" ");
+            List<Light> lightList = area.getLights();
+            for(Light light : lightList){
+                System.out.println(light.getDeviceId()+" "+light.getGroupId()+" "+light.getInGroupId());
+            }
         }
+
     }
+
+    @Test
+    public void deleteAreaById(){
+        areaService.deleteAreaById(1);
+    }
+
 }

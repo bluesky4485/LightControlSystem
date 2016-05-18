@@ -10,4 +10,5 @@ import java.util.List;
 public interface AreaService {
     void insertArea(Area area);
     List<Area> findAllAreas();
+    void deleteAreaById(Integer id);
 }

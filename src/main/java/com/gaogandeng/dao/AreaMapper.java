@@ -10,5 +10,6 @@ import java.util.List;
 public interface AreaMapper {
     void insertArea(Area area);
     List<Area> findAllAreas();
+    void deleteAreaById(Integer id);
 
 }

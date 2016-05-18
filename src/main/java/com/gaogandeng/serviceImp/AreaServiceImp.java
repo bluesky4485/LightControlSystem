@@ -32,4 +32,8 @@ public class AreaServiceImp implements AreaService{
     public List<Area> findAllAreas() {
        return  areaMapper.findAllAreas();
     }
+
+    public void deleteAreaById(Integer id) {
+        areaMapper.deleteAreaById(id);
+    }
 }
