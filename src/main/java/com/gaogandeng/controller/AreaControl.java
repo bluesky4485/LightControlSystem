@@ -36,6 +36,19 @@ public class AreaControl {
         areaUtilService.deleteareaById(Integer.parseInt(areaId));
     }
 
+    @RequestMapping(value="/area/deleteid")
+    public @ResponseBody
+    void deletearealight(HttpServletRequest request){
+        String areaId = request.getParameter("areaId");
+        String id_only = request.getParameter("id_only");
+
+        Area area = areaUtilService.findareaById(Integer.parseInt(areaId));
+        String lightsId = area.getLightsId();
+        String newLightsId = lightsId.replace(id_only+";","");
+        area.setLightsId(newLightsId);
+        areaUtilService.updateAreaLight(area);
+    }
+
     @RequestMapping(value="/jsp/addarea")
     public String addarea(HttpServletRequest request){
         String areaId = request.getParameter("areaid");

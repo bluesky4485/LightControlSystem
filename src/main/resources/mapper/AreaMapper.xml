@@ -22,9 +22,17 @@
         SELECT * FROM areas
     </select>
 
+    <select id="findAreaById" resultMap="AreaResult" parameterType="Integer">
+        SELECT * FROM areas WHERE area_id = #{areaId}
+    </select>
+
     <delete id="deleteAreaById" parameterType="Integer">
         DELETE FROM areas WHERE  area_id = #{areaId}
     </delete>
+
+    <update id="updateAreaLight" parameterType="Area">
+        UPDATE areas SET lights_id = #{lightsId} WHERE area_id = #{areaId}
+    </update>
 
 
 

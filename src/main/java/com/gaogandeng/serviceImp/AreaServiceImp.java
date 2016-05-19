@@ -36,4 +36,12 @@ public class AreaServiceImp implements AreaService{
     public void deleteAreaById(Integer id) {
         areaMapper.deleteAreaById(id);
     }
+
+    public Area findAreaById(Integer id) {
+        return areaMapper.findAreaById(id);
+    }
+
+    public void updateAreaLight(Area area) {
+        areaMapper.updateAreaLight(area);
+    }
 }

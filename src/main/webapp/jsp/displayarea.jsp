@@ -11,30 +11,6 @@
 </head>
 <body style="position:relative;width: 100%;height: 100%">
     <div id="arealist" style="width: 100%;height: 100%;">
-
     </div>
-    <%--<div id="div1"  style="float:left;width: 20%;height:250px;border: 1px black solid;" >--%>
-        <%--区域1--%>
-    <%--</div>--%>
-    <%--<div id="div2"  style="float:left;width: 20%;height:250px;border: 1px black solid;">--%>
-        <%--区域2--%>
-    <%--</div>--%>
-
-<%--<div style="border: 2px black solid;">--%>
-    <%--<table style="width: 100%;">--%>
-        <%--<thead>--%>
-        <%--<tr style="background-color: #215867;text-align: center;">--%>
-            <%--<td><input type="checkbox" name="checkall" /></td>--%>
-            <%--<td><span style="color: white">id      </span></td>--%>
-            <%--<td><span style="color: white">集中控制器</span></td>--%>
-            <%--<td><span style="color: white">组号     </span></td>--%>
-            <%--<td><span style="color: white">灯号     </span></td>--%>
-        <%--</tr>--%>
-        <%--</thead>--%>
-        <%--<tbody id="list" style="text-align: center">--%>
-        <%--</tbody>--%>
-    <%--</table>--%>
-<%--</div>--%>
-
 </body>
 </html>

@@ -11,4 +11,6 @@ public interface AreaService {
     void insertArea(Area area);
     List<Area> findAllAreas();
     void deleteAreaById(Integer id);
+    Area findAreaById(Integer id);
+    void updateAreaLight(Area area);
 }

@@ -33,16 +33,19 @@ public class AreaUtilService {
         for(Area area : areaList){
             String lightsId = area.getLightsId();
             List<Light> lightList = Lists.newArrayList();
-            String[] list = lightsId.split(";");
-
-            for(int i=0;i<list.length;i++){
-                Light light = lightService.findLightById(Integer.parseInt(list[i]));
-                if(light!= null){
-                    lightList.add(light);
-                }
-                area.setLights(lightList);
+            String[] list=null;
+            if(lightsId.length()>0){
+                list = lightsId.split(";");
             }
-
+            if(list!=null){
+                for(int i=0;i<list.length;i++){
+                    Light light = lightService.findLightById(Integer.parseInt(list[i]));
+                    if(light!= null){
+                        lightList.add(light);
+                    }
+                    area.setLights(lightList);
+                }
+            }
         }
 
         return areaList;
@@ -54,5 +57,13 @@ public class AreaUtilService {
 
     public void deleteareaById(Integer id){
         areaService.deleteAreaById(id);
+    }
+
+    public Area findareaById(Integer id){
+        return areaService.findAreaById(id);
+    }
+
+    public void updateAreaLight(Area area){
+        areaService.updateAreaLight(area);
     }
 }

@@ -16,7 +16,23 @@ function createXmlHttpRequest(){
 
 function deletecmd(areaId){
     var xmlHttpRequest = createXmlHttpRequest();
+    //xmlHttpRequest.onreadystatechange = zswFun;
     xmlHttpRequest.open("POST","/area/delete.do?areaId="+areaId,true);//需要改
+    xmlHttpRequest.send(null);
+
+}
+// function zswFun(){
+//     if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
+//         var b = xmlHttpRequest.responseText;
+//         if(b == "true"){
+//             getjson();
+//         }
+//     }
+// }
+
+function deleteidcmd(areaId,id_only){
+    var xmlHttpRequest = createXmlHttpRequest();
+    xmlHttpRequest.open("POST","/area/deleteid.do?areaId="+areaId+"&id_only="+id_only,true);//需要改
     xmlHttpRequest.send(null);
 
 }
@@ -54,38 +70,47 @@ function getjson(){
             divtopObj.html("区域编号："+"<font color='red'>"+areaId+"</font>"+"  区域名称:"+"<font color='red'>"+areaName+"</font>"+"&nbsp;");
 
             var tableObj = $("<table style='width: 100%;text-align: center'></table>")
-            var tableheadObj = $("<tr style='background-color: #0e90d2'><td>id</td><td>集中控制器</td><td>组号</td><td>灯号</td></tr>")
+            var tableheadObj = $("<tr style='background-color: #0e90d2'><td>id</td><td>集中控制器</td><td>组号</td><td>灯号</td><td>删除</td></tr>")
             tableheadObj.appendTo(tableObj);
             var deletebutton = $("<button>"+"删除区域"+"</button>")
             deletebutton.click(function(event){
                     deletecmd(areaId);
-                    setTimeout(getjson(),500);
+                    setTimeout(getjson(),1000);
             })
             deletebutton.appendTo(divtopObj);
-            for(var i=0;i<item.lights.length;i++){
 
-                var id_only = item.lights[i].id;
-                var deviceId = item.lights[i].deviceId;
-                var groupId = item.lights[i].groupId;
-                var inGroupId = item.lights[i].inGroupId;
+            if(item.lights!=null){
+                for(var i=0;i<item.lights.length;i++){
 
-                var lineObj = $("<tr></tr>")
-                var idObj = $("<td></td>")
-                idObj.html(id_only);
-                var deviceIdObj = $("<td></td>")
-                deviceIdObj.html(deviceId);
-                var groupIdObj = $("<td></td>")
-                groupIdObj.html(groupId);
-                var inGroupIdObj = $("<td></td>")
-                inGroupIdObj.html(inGroupId);
+                    var id_only = item.lights[i].id;
+                    var deviceId = item.lights[i].deviceId;
+                    var groupId = item.lights[i].groupId;
+                    var inGroupId = item.lights[i].inGroupId;
 
-                idObj.appendTo(lineObj);
-                deviceIdObj.appendTo(lineObj);
-                groupIdObj.appendTo(lineObj);
-                inGroupIdObj.appendTo(lineObj);
+                    var lineObj = $("<tr></tr>")
+                    var idObj = $("<td></td>")
+                    idObj.html(id_only);
+                    var deviceIdObj = $("<td></td>")
+                    deviceIdObj.html(deviceId);
+                    var groupIdObj = $("<td></td>")
+                    groupIdObj.html(groupId);
+                    var inGroupIdObj = $("<td></td>")
+                    inGroupIdObj.html(inGroupId);
+                    var deleteidbutton = $("<button>"+"删除"+"</button>")
+                    deleteidbutton.click(function(event){
+                        deleteidcmd(areaId,id_only);
+                        setTimeout(getjson(),500);
+                    })
+                    idObj.appendTo(lineObj);
+                    deviceIdObj.appendTo(lineObj);
+                    groupIdObj.appendTo(lineObj);
+                    inGroupIdObj.appendTo(lineObj);
+                    deleteidbutton.appendTo(lineObj);
 
-                lineObj.appendTo(tableObj);
+                    lineObj.appendTo(tableObj);
+                }
             }
+
 
 
 
