@@ -14,7 +14,7 @@
 
     <insert id="insertArea" parameterType="Area" useGeneratedKeys="true" keyProperty="area_id">
         INSERT INTO areas (area_id, area_name,lights_id ) VALUES (
-        #{areaId}, #{areaName},#{lightsId}
+        #{areaId},#{areaName},#{lightsId}
         )
     </insert>
 

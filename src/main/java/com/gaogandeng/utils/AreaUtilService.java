@@ -47,4 +47,12 @@ public class AreaUtilService {
 
         return areaList;
     }
+
+    public void addarea(Area area){
+        areaService.insertArea(area);
+    }
+
+    public void deleteareaById(Integer id){
+        areaService.deleteAreaById(id);
+    }
 }

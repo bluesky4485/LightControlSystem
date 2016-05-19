@@ -21,7 +21,7 @@
         </font><span style="color: red">(*)</span>必填
     </div>
     <div style="margin-top: 10px">
-    <form class="form" name="form" id="adduser" method="post" action="adduser.do">
+    <form class="form" name="form" id="adduser" method="post" action="/area//addarea.do">
 
         <h3><font style="color: red">(*)</font>姓名
             <input type="text" placeholder="Username" id="username" name="username"/></h3>

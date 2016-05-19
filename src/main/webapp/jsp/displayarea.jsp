@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>区域显示</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/displayarea.js"></script>
 </head>
 <body style="position:relative;width: 100%;height: 100%">
+    <div id="arealist" style="width: 100%;height: 100%;">
 
-    <div id="div1"  style="float:left;width: 20%;height:250px;border: 1px black solid;" >
-        区域1
     </div>
-    <div id="div2"  style="float:left;width: 20%;height:250px;border: 1px black solid;">
-        区域2
-    </div>
+    <%--<div id="div1"  style="float:left;width: 20%;height:250px;border: 1px black solid;" >--%>
+        <%--区域1--%>
+    <%--</div>--%>
+    <%--<div id="div2"  style="float:left;width: 20%;height:250px;border: 1px black solid;">--%>
+        <%--区域2--%>
+    <%--</div>--%>
 
 <%--<div style="border: 2px black solid;">--%>
     <%--<table style="width: 100%;">--%>
@@ -31,7 +35,6 @@
         <%--</tbody>--%>
     <%--</table>--%>
 <%--</div>--%>
-<script src="../js/jquery/jquery-1.9.1.js"></script>
-<script src="../js/right5.js"></script>
+
 </body>
 </html>

@@ -33,7 +33,7 @@ public class AreaTest {
 
     @Test
     public void insertArea(){
-        Area area = new Area(2,"ff","78;76");
+        Area area = new Area(5,"ll","494;495;496;497;498;499");
         areaService.insertArea(area);
     }
 
@@ -54,7 +54,7 @@ public class AreaTest {
 
     @Test
     public void deleteAreaById(){
-        areaService.deleteAreaById(1);
+        areaService.deleteAreaById(2);
     }
 
 }
