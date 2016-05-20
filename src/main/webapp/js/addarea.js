@@ -21,7 +21,6 @@ function checkform(form){
         form.password.focus();
         return false;
     }
-    
     return ture;
 
 }
