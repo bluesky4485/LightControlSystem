@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>区域分组</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
 </head>
 <body style="text-align: center;width: 100%">

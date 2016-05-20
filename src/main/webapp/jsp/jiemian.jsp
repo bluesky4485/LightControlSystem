@@ -42,7 +42,7 @@
     <!--中左-->
     <div id="left1" class="divmid">
             <div id="left" style="width:98%;height:90%;min-height: 80%;;">
-                <a href="jsp/right1.jsp" target="right">
+                <a href="jsp/statement.jsp" target="right">
                     <button type="button" class="mybtn">
                         <img src="../img/1.png" style="width:40px" />综合首页
                     </button>
@@ -57,18 +57,18 @@
                         <img src="../img/3.png" style="width:40px" /><font>控制策略</font>
                     </button>
                 </a><br>
-                <a href="jsp/right3.jsp" target="right">
+                <a href="jsp/warning.jsp" target="right">
                     <button id="buttonwarn" class="mybtn">
                         <img src="../img/4.png" style="width:40px" /><font>故障报警</font>
                     </button>
                 </a><br>
-                <a href="jsp/right4.jsp" target="right">
+                <a href="jsp/query.jsp" target="right">
                     <button type="button" class="mybtn">
                         <img src="../img/5.png" style="width:40px" /><font>操作查询</font>
                     </button>
                 </a><br>
 
-                <a href="jsp/right5.jsp" target="right">
+                <a href="jsp/area.jsp" target="right">
                     <button type="button" class="mybtn">
                         <img src="../img/6.png" style="width:40px" /><font>区域分组</font>
                     </button>
@@ -82,7 +82,7 @@
 
                 <c:choose>
                     <c:when test="${user.authority == 0}">
-                        <a href="jsp/right6.jsp" target="right" style="">
+                        <a href="jsp/manage.jsp" target="right" style="">
                             <button type="button"  class="mybtn">
                                 <img src="../img/8.png" style="width:30px" /><font>系统管理</font>
                             </button>
@@ -95,7 +95,7 @@
     </div>
     <!--中右-->
     <div class="divmid-right">
-            <iframe name="right" class="iframe" src="jsp/right1.jsp">
+            <iframe name="right" class="iframe" src="jsp/statement.jsp">
             </iframe>
     </div>
     <!--底部-->

@@ -25,7 +25,7 @@
 
         <h3><font style="color: red">(*)</font>姓名
             <input type="text" placeholder="Username" id="username" name="username"/></h3>
-
+        <h6 style="color: red">${error}</h6>
         <h3><font style="color: red">(*)</font>密码
             <input type="password" placeholder="Password" id="password" name="password"/></h3>
 

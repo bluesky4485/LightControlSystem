@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -64,15 +63,32 @@ public class UserController {
     }
 
     @RequestMapping(value="/jsp/adduser")
-    public String addUser(HttpServletRequest request){
+    public String addUser(HttpServletRequest request, Model model){
         User user = new User();
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         user.setPhone(request.getParameter("phone"));
         user.setAddress(request.getParameter("address"));
         user.setAuthority(Integer.valueOf(request.getParameter("authority")));
-        authenticationService.insertUser(user);
-        return "right6";
+        List<User> userList = authenticationService.queryAllUsers();
+        Boolean have = false;
+        if(userList!=null){
+            for (User users:userList){
+                if(users.getUserName().equals(user.getUserName())){
+                    have=true;
+                    break;
+                }
+            }
+        }
+        if(have==false){
+            authenticationService.insertUser(user);
+            return "manage";
+        }else{
+            model.addAttribute("error","用户名已被使用");
+            return "adduser";
+        }
+
+
     }
 
 }
