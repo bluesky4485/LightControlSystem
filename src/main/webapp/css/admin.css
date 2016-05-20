@@ -11,7 +11,7 @@ li{list-style:none;}
 cite,code,caption,em,i{font-style:normal;font-weight:normal;}
 q:before,q:after{content:'';}
 a{color:#0085da;text-decoration:none;}
-input[type="radio"],input[type="checkbox"]{margin-right:8px;};
+input[type="radio"],input[type="checkbox"]{margin-right:8px;}
 /*a:visited{color:#800080;}*/
 a:hover{text-decoration:underline;}
 a:active,a:focus{outline:none;}
@@ -50,8 +50,8 @@ h2{font-size:22px;font-weight:normal;color:#000;}
 .creat-tit{margin:10px 0;}
 .btn-a{display:inline-block;padding:0 14px;height:34px;line-height:34px;margin-right:20px;color:#333;background-position:-275px -49px;background-color:#efefef}
 .btn-a:hover{background-color:#007bc9;color:#fff;background-position:-275px -79px;text-decoration:none;}
-select{border:1px solid #ededed;height:37px;line-height:37px;height:auto \9;line-height:auto \9;margin-right:6px;}
-@-moz-document url-prefix(){select{height:auto;line-height:auto}}
+select{border:1px solid #ededed;height:37px;line-height:37px;height:auto \9;margin-right:6px;}
+@-moz-document url-prefix(){select{height:auto;}}
 .creat-i,.pass-i,.refuse-i{margin-right:8px;}
 .creat-i{padding-right:7px;background-position:-200px -37px;}
 .btn-a:hover .creat-i{background-position:-220px -37px;}
@@ -79,7 +79,7 @@ select{border:1px solid #ededed;height:37px;line-height:37px;height:auto \9;line
 .layout2{width:510px;margin-left:-206px;}
 .layout3{width:570px;margin-left:-236px;}
 .l-header{font:18px/68px "microsoft yahei";color:#222;font-weight:normal;text-align:center;border-bottom:1px solid #e7e7e7;}
-.layout .close{no-repeat;position:absolute;width:30px;height:30px;top:15px;right:15px;overflow:hidden;line-height:300px;background-position:0 -65px;}
+.layout .close{position:absolute;width:30px;height:30px;top:15px;right:15px;overflow:hidden;line-height:300px;background-position:0 -65px;}
 .layout .close:hover{background-position:-40px -65px;}
 .type-list{width:692px;overflow:hidden;line-height:20px;margin:30px 0 12px 16px;color:#fff;}
 .type-list li{float:left;display:inline;width:157px;height:129px;margin:0 16px 16px 0;overflow:hidden;cursor:pointer;}

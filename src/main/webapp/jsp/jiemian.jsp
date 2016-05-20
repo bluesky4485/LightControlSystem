@@ -52,7 +52,7 @@
                         <img src="../img/2.png" style="width:40px" /><font>地图监控</font>
                     </button>
                 </a><br>
-                <a href="jsp/right2.jsp" target="right">
+                <a href="jsp/control.jsp" target="right">
                     <button type="button" class="mybtn">
                         <img src="../img/3.png" style="width:40px" /><font>控制策略</font>
                     </button>
@@ -74,7 +74,7 @@
                     </button>
                 </a><br>
 
-                <a href="jsp/copy.jsp" target="right">
+                <a href="jsp/backup.jsp" target="right">
                     <button type="button" class="mybtn">
                         <img src="../img/7.png" style="width:40px" /><font>备份还原</font>
                     </button>

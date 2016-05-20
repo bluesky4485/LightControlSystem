@@ -42,8 +42,6 @@
             <tbody id="list" style="text-align: center"></tbody>
         </table>
     </div>
-    <div class="div2">
-    </div>
 </div>
 </body>
 </html>

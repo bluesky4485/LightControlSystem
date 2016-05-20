@@ -42,7 +42,7 @@ body{margin:0;padding:0; list-style:none;background:url(../img/backgroud.jpg) to
     margin-left:15%;
     height:84%;
     width:85%;
-    min-height: 700px;
+    min-height: 500px;
     position:absolute;
 }
 .iframe{
@@ -52,8 +52,8 @@ body{margin:0;padding:0; list-style:none;background:url(../img/backgroud.jpg) to
 }
 .mybtn {
        width:100%;
-       height: 10%;
-       min-height: 80px;
+       height: 7%;
+       min-height: 60px;
        background-color: #6193B3;
        text-align:center;
        font-family:Arial,sans-serif;
