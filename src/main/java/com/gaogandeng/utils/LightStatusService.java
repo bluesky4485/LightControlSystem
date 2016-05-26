@@ -1,6 +1,7 @@
 package com.gaogandeng.utils;
 
 import com.gaogandeng.QueryCondition.LightStatusQuery;
+import com.gaogandeng.dao.LightStatusLogMapper;
 import com.gaogandeng.model.Light;
 import com.gaogandeng.model.LightStatusLog;
 import com.gaogandeng.service.LightService;
@@ -10,6 +11,8 @@ import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +25,12 @@ import java.util.Map;
 public class LightStatusService {
     private LightStatusLogService lightStatusLogService;
     private LightService lightService;
+    private LightStatusLogMapper lightStatusLogMapper;
+
+    @Autowired
+    public void setLightStatusLogMapper(LightStatusLogMapper lightStatusLogMapper) {
+        this.lightStatusLogMapper = lightStatusLogMapper;
+    }
 
     @Autowired
     public void setLightService(LightService lightService) {
@@ -40,6 +49,10 @@ public class LightStatusService {
      */
     public List<LightStatusLog> queryLightStatus(LightStatusQuery query){
         return lightStatusLogService.findLightStatus(query);
+    }
+
+    public Double findLightStatusPowSum(LightStatusQuery query){
+        return lightStatusLogMapper.findLightPowSum(query);
     }
 
     /**

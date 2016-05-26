@@ -37,9 +37,24 @@
 
     <select id="findLightStatus" parameterType="com.gaogandeng.QueryCondition.LightStatusQuery" resultMap="LightStatusResult">
         SELECT * FROM lightstatuslogs WHERE TRUE
-        <if test="lightId != null">
-            AND light_id = #{lightId}
+        <!--<if test="lightId != null">-->
+            <!--AND light_id = #{lightId}-->
+        <!--</if>-->
+
+        <if test="startTime != null">
+            AND create_time >= #{startTime}
         </if>
+
+        <if test="endTime != null">
+            AND create_time &lt;= #{endTime}
+        </if>
+    </select>
+
+    <select id="findLightPowSum" parameterType="com.gaogandeng.QueryCondition.LightStatusQuery" resultType="Double">
+        SELECT sum(light_pow) FROM lightstatuslogs WHERE TRUE
+        <!--<if test="lightId != null">-->
+        <!--AND light_id = #{lightId}-->
+        <!--</if>-->
 
         <if test="startTime != null">
             AND create_time >= #{startTime}

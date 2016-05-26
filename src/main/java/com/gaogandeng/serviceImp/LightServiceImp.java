@@ -1,5 +1,6 @@
 package com.gaogandeng.serviceImp;
 
+import com.gaogandeng.QueryCondition.LightStatusQuery;
 import com.gaogandeng.dao.LightMapper;
 import com.gaogandeng.model.Light;
 import com.gaogandeng.service.LightService;
@@ -42,4 +43,5 @@ public class LightServiceImp implements LightService {
     public void insertLight(Light light) {
         lightMapper.insertLight(light);
     }
+
 }

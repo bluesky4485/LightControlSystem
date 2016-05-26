@@ -23,8 +23,11 @@
 <div style="width: 50%">
     <canvas id="canvas"></canvas>
 </div>
-<button id="randomizeData">Randomize Data</button>
+<%--<button id="randomizeData">Randomize Data</button>--%>
 
+<div id="canvas-holder" style="width:50%">
+    <canvas id="chart-area"  />
+</div>
 
 <script src="../js/right1.js"></script>
 
