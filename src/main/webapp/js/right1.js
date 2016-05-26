@@ -9,9 +9,10 @@
 window.onload = function() {
     ajax();
     ajax2();
+    ajax3();
 }
 
-
+//耗能
 function  ajax(){
     $.ajax({
         url:'/lightstatus/pow.do',//需要添加
@@ -72,7 +73,7 @@ function succFunction(data) {
         }
     });
 };
-
+//亮灯率
 function  ajax2(){
     $.ajax({
         url:'/lightstatus/all.do',//需要添加
@@ -96,8 +97,7 @@ function succFunction2(data) {
         }
     });
 
-
-    var j=(i/jsonData.length)*100;
+    var j=(Math.round((i/jsonData.length) * 10000) / 10000)*100;
     var config = {
         type: 'pie',
         data: {
@@ -125,13 +125,69 @@ function succFunction2(data) {
         }
     };
 
-    var ctx2 = document.getElementById("chart-area").getContext("2d");
+    var ctx2 = document.getElementById("lightrate").getContext("2d");
     window.myPie = new Chart(ctx2, config);
 
 
 }
 
+//故障率
+function  ajax3(){
+    $.ajax({
+        url:'/warning/all.do',//需要添加
+        type:"GET",
+        dataType: 'json',
+        timeout: 1000,
+        cache: false,
+        //beforeSend: LoadFunction, //加载执行方法
+        //error: erryFunction,  //错误执行方法
+        success: succFunction3 //成功执行方法
+    })
+}
 
+function succFunction3(data) {
+    var jsonData = eval(data);
+    var i = 0;
+    $.each(jsonData, function (index,item) {
+        var lightStatus = item.status;
+        if(lightStatus == 0){
+            i++;
+        }
+    });
+
+    var j=(Math.round((i/jsonData.length) * 10000) / 10000)*100;
+    var config2 = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    i,
+                    jsonData.length-i,
+                ],
+                backgroundColor: [
+                    "#4D5360",
+                    "rgba(255,187,205,0.5)",
+                ],
+            }],
+            labels: [
+                "故障",
+                "完好"
+            ]
+        },
+        options: {
+            responsive: true,
+            title:{
+                display:true,
+                text:"故障率"+j+"%"
+            }
+        }
+    };
+
+    var ctx3 = document.getElementById("failurerate").getContext("2d");
+    window.myPie = new Chart(ctx3, config2);
+
+
+}
 
 
 

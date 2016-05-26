@@ -19,17 +19,22 @@
     <%--<script src="../js/Chart.js"></script>--%>
 
 </head>
-<body >
-<div style="width: 50%">
-    <canvas id="canvas"></canvas>
-</div>
-<%--<button id="randomizeData">Randomize Data</button>--%>
+<body style="text-align: center;width: 100%">
+<div style="margin: 0 auto;width: 80%">
+    <div style="width: 50%;margin: 0 auto" >
+        <canvas id="canvas"></canvas>
+    </div>
+    <%--<button id="randomizeData">Randomize Data</button>--%>
 
-<div id="canvas-holder" style="width:50%">
-    <canvas id="chart-area"  />
-</div>
+    <div id="canvas-holder" style="width:50%;margin: 0 auto;float: left;">
+        <canvas id="lightrate"  />
+    </div>
+
+    <div id="canvas-holder" style="width:50%;margin: 0 auto;float: left">
+        <canvas id="failurerate"  />
+    </div>
 
 <script src="../js/right1.js"></script>
-
+</div>
 </body>
 </html>

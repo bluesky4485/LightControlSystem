@@ -8,7 +8,7 @@ function confirmall(){
         cmd(value);
         setTimeout(getjson(),800);
     }
-    alert("已全部确认");
+    //alert("已全部确认");
 }
 
 $(function(){
@@ -106,16 +106,19 @@ function getjson(){
                 cmd(id_only);
                 setTimeout(getjson(),800);
             })
-            idOnlyObj.appendTo(lineObj);
-            numObj.appendTo(lineObj);
-            deviceIdObj.appendTo(lineObj);
-            groupIdObj.appendTo(lineObj);
-            inGroupIdOBj.appendTo(lineObj);
-            infObj.appendTo(lineObj);
-            statusObj.appendTo(lineObj);
-            curDateObj.appendTo(lineObj);
-            button.appendTo(lineObj);
-            lineObj.appendTo(fatherObj);
+            if( status == 0){
+                idOnlyObj.appendTo(lineObj);
+                numObj.appendTo(lineObj);
+                deviceIdObj.appendTo(lineObj);
+                groupIdObj.appendTo(lineObj);
+                inGroupIdOBj.appendTo(lineObj);
+                infObj.appendTo(lineObj);
+                statusObj.appendTo(lineObj);
+                curDateObj.appendTo(lineObj);
+                button.appendTo(lineObj);
+                lineObj.appendTo(fatherObj);
+            }
+
         });
     }
 }

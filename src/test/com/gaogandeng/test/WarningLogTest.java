@@ -55,7 +55,7 @@ public class WarningLogTest {
     @Test
     public void findWarning(){
         WarningLogQuery query = new WarningLogQuery();
-        query.setStatus(1);
+//        query.setStatus(1);
         List<WarningLog> logs = warningLogService.findWarningLogs(query);
         for (WarningLog log : logs){
             System.out.println(log);
