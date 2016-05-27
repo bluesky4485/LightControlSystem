@@ -7,13 +7,13 @@
 
 
 window.onload = function() {
-    ajax();
-    ajax2();
-    ajax3();
+    getPowJson();
+    getAllLightsJson();
+    getWarningsJson();
 }
 
 //耗能
-function  ajax(){
+function  getPowJson(){
     $.ajax({
         url:'/lightstatus/pow.do',//需要添加
         type:"GET",
@@ -31,6 +31,11 @@ function succFunction(data) {
     var barChartData = {
         labels: ["上月", "本月", "去年同期"],
         datasets: [
+            //{
+            //    label:"",
+            //    backgroundColor: ["rgba(151,187,205,0.5)","rgba(255,187,205,0.5)","rgba(151,255,205,0.5)"],
+            //    data: [data[0]*60,data[1]*60,data[2]*60]
+            //}
             {
                 label:["上月"],
                 backgroundColor: "rgba(151,187,205,0.5)",
@@ -73,8 +78,9 @@ function succFunction(data) {
         }
     });
 };
+
 //亮灯率
-function  ajax2(){
+function  getAllLightsJson(){
     $.ajax({
         url:'/lightstatus/all.do',//需要添加
         type:"GET",
@@ -132,7 +138,7 @@ function succFunction2(data) {
 }
 
 //故障率
-function  ajax3(){
+function  getWarningsJson(){
     $.ajax({
         url:'/warning/all.do',//需要添加
         type:"GET",
