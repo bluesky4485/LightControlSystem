@@ -23,7 +23,7 @@
     <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
-<div style="margin: 0 auto;width: 100%;height:100%;align-items: center">
+<div style="margin: 0 auto;width: 100%;height:100%; ">
         <div id="bright" class="chooselight">
             <h4 class="text-primary" style="text-align: center">灯的亮度</h4><br>
             <div class="div1311">
@@ -33,8 +33,8 @@
         <div id="light_time" class="choosetime" >
             <h4 class="text-primary" style="text-align: center">任务时间</h4>
             <div class="div1321">
-                <input name="act_start_time" id="act_start_time" type="text" class="text-box" value="" placeholder="开灯时间" title="开始时间≥当前时间"  style="cursor:pointer;"/>
-                <input name="act_stop_time" id="act_stop_time" type="text" class="text-box" value="" placeholder="关灯时间" title="结束时间>开始时间"  style="cursor:pointer;"/>
+                <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;width: 100%;"/><br>
+                <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;width: 100%;"/>
             </div>
         </div>
         <div class="div2_1">

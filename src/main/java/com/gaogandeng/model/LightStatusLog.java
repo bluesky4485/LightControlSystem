@@ -20,43 +20,7 @@ public class LightStatusLog implements Serializable {
     private Double temperature1;         //温度
     private Double temperature2;         //温度
 
-    private Double longitude;            //经度
-    private Double latitude;             //纬度
-    private Integer northOrSouth;        //1代表北纬，0代表南纬
-    private Integer eastOrWest;          //1代表东经，0代表西经
     private Date infoTime;              //状态时间
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Integer getNorthOrSouth() {
-        return northOrSouth;
-    }
-
-    public void setNorthOrSouth(Integer northOrSouth) {
-        this.northOrSouth = northOrSouth;
-    }
-
-    public Integer getEastOrWest() {
-        return eastOrWest;
-    }
-
-    public void setEastOrWest(Integer eastOrWest) {
-        this.eastOrWest = eastOrWest;
-    }
 
     public Double getTemperature1() {
         return temperature1;
@@ -163,10 +127,6 @@ public class LightStatusLog implements Serializable {
                 ", temperature=" + temperature +
                 ", temperature1=" + temperature1 +
                 ", temperature2=" + temperature2 +
-                ",longitude="+longitude+
-                ",latitude="+latitude+
-                ",northOrSouth="+northOrSouth+
-                ",eastOrWest="+eastOrWest+
                 ", infoTime=" + infoTime +
                 '}';
     }

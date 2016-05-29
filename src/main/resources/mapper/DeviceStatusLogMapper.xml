@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaogandeng.dao.DeviceStatusLogMapper">
+
+    <resultMap type="com.gaogandeng.model.DeviceStatusLog" id="DeviceStatusLogResult">
+        <id property="id" column="id"/>
+        <result property="deviceId" column="deviceid"/>
+        <result property="longitude" column="longitude"/>
+        <result property="latitude" column="latitude"/>
+        <result property="northOrSouth" column="northorsouth"/>
+        <result property="eastOrWest" column="eastorwest"/>
+    </resultMap>
+
+    <select id="findAllDeviceStatusLogs"  resultMap="DeviceStatusLogResult">
+        SELECT * FROM devicestatuslogs
+    </select>
+
+</mapper>

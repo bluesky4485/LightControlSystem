@@ -13,5 +13,4 @@ public interface AreaMapper {
     void deleteAreaById(Integer id);
     Area findAreaById(Integer id);
     void updateAreaLight(Area area);
-
 }
