@@ -378,7 +378,7 @@ public class LightControl {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH) + 1;
         int day = cal.get(Calendar.DAY_OF_MONTH);
-        System.out.println(year+" "+month+" "+day);
+//        System.out.println(year+" "+month+" "+day);
         Integer daylist=null;
         Integer frdays=null;
         if( ((year%4==0)&&(year%100!=0)) || ((year%100==0)&&(year%400==0)) ){
@@ -413,7 +413,7 @@ public class LightControl {
                 break;
         }
 
-        System.out.println(frdays+" "+daylist);
+//        System.out.println(frdays+" "+daylist);
 
         Double pi = Math.PI;
         Double longitudeDou = Double.parseDouble(longitude);
