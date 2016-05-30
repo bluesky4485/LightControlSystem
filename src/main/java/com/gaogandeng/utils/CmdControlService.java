@@ -181,7 +181,7 @@ public class CmdControlService {
                 break;
         }
         String dataCheck = checkSum(data);
-        String CmdInfo=deviceNo+srcAddress+funcCode+len + data + dataCheck;
+        String CmdInfo=deviceNo+srcAddress+funcCode+len+data+dataCheck;
         return CmdInfo;
     }
 

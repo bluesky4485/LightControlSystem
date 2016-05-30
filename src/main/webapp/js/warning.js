@@ -104,7 +104,7 @@ function getjson(){
             var button = $("<td><button>"+"确认"+"</button></td>")
             button.click(function(event){
                 cmd(id_only);
-                setTimeout(getjson(),800);
+                setTimeout(getjson(),1000);
             })
             if( status == 0){
                 idOnlyObj.appendTo(lineObj);

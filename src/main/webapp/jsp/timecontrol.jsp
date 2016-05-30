@@ -32,10 +32,10 @@
         </div>
         <div id="light_time" class="choosetime" >
             <h4 class="text-primary" style="text-align: center">任务时间</h4>
-            <div class="div1321">
-                <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;width: 100%;"/><br>
-                <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;width: 100%;"/>
-            </div>
+            <%--<div class="div1321">--%>
+                <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;width: 60%;"/><br><br>
+                <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;width: 60%;"/>
+            <%--</div>--%>
         </div>
         <div class="div2_1">
                 <h4 style="text-align: center"><span class="text-primary">灯的选择</span></h4><br>

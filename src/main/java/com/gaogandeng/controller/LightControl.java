@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -354,4 +355,132 @@ public class LightControl {
         }
 
     }
+
+
+    @RequestMapping(value = "/sitecontrol")
+    public @ResponseBody
+    void sitelightcontrol(HttpServletRequest request){
+        String longitude = request.getParameter("longitude");
+        String latitude = request.getParameter("latitude");
+        String controldays = request.getParameter("controldays");
+
+
+        if(controldays==""){
+            controldays="0";
+        }
+        String cdHex = Integer.toHexString(Integer.parseInt(controldays));
+        switch(cdHex.length()){
+            case 1: cdHex = "0" + cdHex;
+                break;
+        }
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH) + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        System.out.println(year+" "+month+" "+day);
+        Integer daylist=null;
+        Integer frdays=null;
+        if( ((year%4==0)&&(year%100!=0)) || ((year%100==0)&&(year%400==0)) ){
+            frdays = 29;
+        }else{
+            frdays = 28;
+        }
+        switch (month){
+            case 1:daylist=day;
+                break;
+            case 2:daylist=31+day;
+                break;
+            case 3:daylist=31+frdays+day;
+                break;
+            case 4:daylist=31*2+frdays+day;
+                break;
+            case 5:daylist=31*2+30+frdays+day;
+                break;
+            case 6:daylist=31*3+30+frdays+day;
+                break;
+            case 7:daylist=31*3+30*2+frdays+day;
+                break;
+            case 8:daylist=31*4+30*2+frdays+day;
+                break;
+            case 9:daylist=31*5+30*2+frdays+day;
+                break;
+            case 10:daylist=31*5+30*3+frdays+day;
+                break;
+            case 11:daylist=31*6+30*3+frdays+day;
+                break;
+            case 12:daylist=31*6+30*4+frdays+day;
+                break;
+        }
+
+        System.out.println(frdays+" "+daylist);
+
+        Double pi = Math.PI;
+        Double longitudeDou = Double.parseDouble(longitude);
+        Double latitudeDou = Double.parseDouble(latitude);
+        Double sunrise = 24*(180+8*15-longitudeDou-Math.acos(-Math.tan(-23.4*Math.cos(2*pi*(daylist+9)/365)*pi/180)*Math.tan(latitudeDou*pi/180))*180/pi)/360;
+        Double sunset = 24*(1+(8*15-longitudeDou)/180)-sunrise;
+
+        //日出时间
+        int sunriseHour = (int)(sunrise*10)/10;
+        int sunriseMin =(int)((sunrise-sunriseHour)*60*10)/10;
+        String sunriseHourHex = Integer.toHexString(sunriseHour);
+        switch(sunriseHourHex.length()){
+            case 1: sunriseHourHex = "0" + sunriseHourHex;
+                break;
+        }
+        String sunriseMinHex =Integer.toHexString(sunriseMin);
+        switch(sunriseMinHex.length()){
+            case 1: sunriseMinHex = "0" + sunriseMinHex;
+                break;
+        }
+
+        //日落时间
+        int sunsetHour = (int)(sunset*10)/10;
+        int sunsetMin =(int)((sunset-sunsetHour)*60*10)/10;
+        String sunsetHourHex = Integer.toHexString(sunsetHour);
+        switch(sunsetHourHex.length()){
+            case 1: sunsetHourHex = "0" + sunsetHourHex;
+                break;
+        }
+        String sunsetMinHex =Integer.toHexString(sunsetMin);
+        switch(sunsetMinHex.length()){
+            case 1: sunsetMinHex = "0" + sunsetMinHex;
+                break;
+        }
+
+
+        String data = "2"+cdHex+"02"+sunriseHourHex+sunriseMinHex+"00"+sunsetHourHex+sunsetMinHex+"ff";
+        String cmd = cmdControlService.getCmdInfo("0000","0000","08",data);
+        cmd = "@" + cmd + "$";
+        System.out.print(cmd);
+
+        redisService.pushCmd("gaogandeng:timelytask:list", cmd);
+    }
+
+
+    @RequestMapping(value = "/suncontrol")
+    public @ResponseBody
+    void sunlightcontrol(HttpServletRequest request){
+        String openlimit = request.getParameter("openlimit");
+        String closelimit = request.getParameter("closelimit");
+        String controldays = request.getParameter("controldays");
+        if(controldays==""){
+            controldays="0";
+        }
+        String cdHex = Integer.toHexString(Integer.parseInt(controldays));
+        switch(cdHex.length()){
+            case 1: cdHex = "0" + cdHex;
+                break;
+        }
+        String data = "3"+cdHex+openlimit+closelimit;
+
+        String cmd = cmdControlService.getCmdInfo("0000","0000","09",data);
+        cmd = "@" + cmd + "$";
+        System.out.print(cmd);
+
+        redisService.pushCmd("gaogandeng:timelytask:list", cmd);
+    }
+
+
 }
