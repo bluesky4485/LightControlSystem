@@ -1,7 +1,9 @@
 package com.gaogandeng.controller;
 
 import com.gaogandeng.QueryCondition.LightStatusQuery;
+import com.gaogandeng.model.DeviceStatusLog;
 import com.gaogandeng.model.LightStatusLog;
+import com.gaogandeng.service.DeviceStatusLogService;
 import com.gaogandeng.utils.LightStatusService;
 import com.gaogandeng.utils.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,12 @@ public class StatusControl {
     //TODO 对状态信息进行差uxn控制
     private LightStatusService lightStatusService;
     private TimeService timeService;
+    private DeviceStatusLogService deviceStatusLogService;
+
+    @Autowired
+    public void setDeviceStatusLogService(DeviceStatusLogService deviceStatusLogService) {
+        this.deviceStatusLogService = deviceStatusLogService;
+    }
 
     @Autowired
     public void setTimeService(TimeService timeService) {
@@ -64,5 +72,11 @@ public class StatusControl {
     public @ResponseBody
     List<LightStatusLog> getAllLatestStatus(){
         return lightStatusService.queryLatestStatus();
+    }
+
+    @RequestMapping(value = "/getsite")
+    public @ResponseBody
+    List<DeviceStatusLog> getAllDeviceStatusLogs(){
+        return deviceStatusLogService.findAllDeviceStatusLogs();
     }
 }

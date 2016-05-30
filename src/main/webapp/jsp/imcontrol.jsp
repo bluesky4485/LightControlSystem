@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: biny
-  Date: 16-5-20
-  Time: 上午11:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +28,7 @@
         <div class="chooselight">
                 <h4 class="text-primary">灯的亮度</h4><br>
                 <div class="div1311">
-                    <input  type="hidden" class="single-slider" />
+                    <input  type="hidden" class="single-slider"/>
                 </div>
         </div>
         <div class="div2_1">

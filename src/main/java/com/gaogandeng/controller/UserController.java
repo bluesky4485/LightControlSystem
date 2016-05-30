@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.SessionScope;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -29,7 +30,7 @@ public class UserController {
     private static final Log logger = LogFactory.getLog(UserController.class);
 
     @RequestMapping(value="/login")
-    public String saveUser(HttpServletRequest request, UserForm userForm, Model model){
+    public String saveUser(HttpServletRequest request, UserForm userForm){
         //logger.info("saveUser called");
         userForm.setUserName(request.getParameter("username"));
         userForm.setPassword(request.getParameter("password"));
@@ -40,7 +41,7 @@ public class UserController {
             User user = new User();
             user.setUserName(userForm.getUserName());
             user.setAuthority(userForm.getAuthority());
-            model.addAttribute("user",user);
+            request.getSession().setAttribute("user",user);
             return "jiemian";
         }else{
             return "login";

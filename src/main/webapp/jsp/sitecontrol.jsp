@@ -16,7 +16,7 @@
    <div style="margin: 10% auto;width: 70%;">
         <div>
             <div>
-                <input type="radio" id="manual" name="controlmethod" value="0" />手动
+                <input type="radio" id="manual" name="controlmethod" value="0" checked="checked"/>手动
                 <input type="radio" id="auto" name="controlmethod" value="1" />自动
             </div><br>
             <div>

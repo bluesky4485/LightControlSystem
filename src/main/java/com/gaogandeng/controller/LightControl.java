@@ -244,8 +244,8 @@ public class LightControl {
 
         ControlLog controlLog = new ControlLog();
 
-        //TODO cha xun dangqian denglu yonghu, bing she zhi dao controlLog zhong.
-        controlLog.setUser(authenticationService.queryUserById(1));
+        //TODO 查询当前登录用户并设置到controlLog中.
+//        controlLog.setUser(request.getSession());
 
         controlLog.setBright(Integer.parseInt(bright)*255/100);
         controlLog.setLightIds(lightIds.toString());
@@ -453,7 +453,7 @@ public class LightControl {
         String data = "2"+cdHex+"02"+sunriseHourHex+sunriseMinHex+"00"+sunsetHourHex+sunsetMinHex+"ff";
         String cmd = cmdControlService.getCmdInfo("0000","0000","08",data);
         cmd = "@" + cmd + "$";
-        System.out.print(cmd);
+//        System.out.print(cmd);
 
         redisService.pushCmd("gaogandeng:timelytask:list", cmd);
     }

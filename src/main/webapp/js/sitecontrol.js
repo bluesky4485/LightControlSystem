@@ -3,6 +3,24 @@
  */
 $(function() {
 
+    function succFunction(data) {
+        var jsonData = eval(data);
+        var longitudesum=0;
+        var latitudesum=0;
+        $.each(jsonData, function (index,item) {
+            //循环获取数据
+            var longitude = item.longitude;
+            var latitude = item.latitude;
+            longitudesum += longitude;
+            latitudesum += latitude;
+        })
+        var longitudeavr = longitudesum/jsonData.length;
+        var latitudeavr = latitudesum/jsonData.length;
+        document.getElementById("longitude").value=longitudeavr;
+        document.getElementById("latitude").value=latitudeavr;
+
+    }
+
     function cmd(url){
         if(window.ActiveXObject){ //如果是IE浏览器
             xmlHttpRequest= new ActiveXObject("Microsoft.XMLHTTP");
@@ -14,8 +32,18 @@ $(function() {
     }
 
     $("#auto").click(function () {
-        document.getElementById("longitude").value=2;
-        document.getElementById("latitude").value=4;
+        $.ajax({
+            url:'/lightstatus/getsite.do',//需要添加
+            type:"GET",
+            dataType: 'json',
+            timeout: 1000,
+            cache: false,
+            //beforeSend: LoadFunction, //加载执行方法
+            //error: erryFunction,  //错误执行方法
+            success: succFunction //成功执行方法
+        })
+
+
     });
 
     $("#manual").click(function () {

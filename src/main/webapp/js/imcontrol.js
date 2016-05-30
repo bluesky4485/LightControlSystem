@@ -38,6 +38,7 @@ $(function(){
         var num_zu = $('input:text[id=zutxt]').val();
         var num_deng = $('input:text[id=lighttxt]').val();
         var url;
+        //var username = ${user.userName};
         // if(control==0){              //即时控制
             if(all==1){           //所有的灯
                 url="/control/timelyall.do?bright="+bright;
