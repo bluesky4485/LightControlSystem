@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>高杆灯</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/jquery.range.css" rel="stylesheet" />
     <link href="../css/admin.css"  rel="stylesheet"/>
     <link href="../css/jquery-ui2.css" rel="stylesheet"  />
     <link href="../css/imcontrol.css" rel="stylesheet"  />
-    <script src="../js/jquery/jquery-1.9.1.js"></script>
-    <script src="../js/bootstrap.js"></script>
     <%--<script src="../js/right2_2.js"></script>--%>
     <script src="../js/imcontrol.js"></script>
     <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
@@ -68,11 +68,10 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="div3" >
-            <button id="sub"  class=" btn-primary" ><h4>提交</h4></button>
+        </div><br>
+        <div>
+            <input type="button" class="btn btn-primary active" id="imControl" value="&nbsp;&nbsp;控制&nbsp;&nbsp;" />
         </div>
 </div>
 </body>
-
 </html>

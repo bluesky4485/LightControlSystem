@@ -1,7 +1,3 @@
-body{
-    background-color: white;
-}
-
 .flo1{
     float: left;
     color: #337AB7;
@@ -51,6 +47,3 @@ body{
 
 }
 
-.div3{
-    margin: 10px auto;
-}

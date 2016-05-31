@@ -29,7 +29,7 @@ $(function(){
     }
 
 
-    $("#sub").click(function() {
+    $('#timeControl').click(function() {
         // var control = $('input:radio[name=control]:checked').val();//即时：0  定时：1
         var bright = $(".single-slider").val();
         var open_time= $('input:text[name=act_start_time]').val();

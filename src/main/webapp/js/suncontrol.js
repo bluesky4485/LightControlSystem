@@ -16,9 +16,18 @@
         var openlimit = $("#openlimit").val();
         var closelimit = $("#closelimit").val();
         var controldays = $("#controldays").val();
-        var url = "/control/suncontrol.do?openlimit="+openlimit+"&closelimit="+closelimit+"&controldays="+controldays;
-        cmd(url);
-        alert("successfully!")
+        if(openlimit == ""){
+            alert("请输入开灯阈值！");
+        }else{
+            if(closelimit == ""){
+                alert("请输入关灯阈值！");
+            }else{
+                var url = "/control/suncontrol.do?openlimit="+openlimit+"&closelimit="+closelimit+"&controldays="+controldays;
+                cmd(url);
+                alert("发送命令成功！");
+            }
+        }
+
     }
 
 

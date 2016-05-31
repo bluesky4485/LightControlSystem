@@ -9,7 +9,9 @@
 <html>
 <head>
     <title>光照控制</title>
-    <script src="../js/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <script src="../js/suncontrol.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
@@ -27,7 +29,7 @@
             <input type="text" id="controldays" placeholder="默认永久(0)"/>&nbsp;&nbsp;&nbsp;
         </div><br>
         <div>
-            <input type="button" id="suncontrol" onclick="suncontrol()" value="控制"/>
+            <input type="button" class="btn btn-primary active" id="sunControl" onclick="suncontrol()" value="控制"/>
         </div>
     </div>
 </body>

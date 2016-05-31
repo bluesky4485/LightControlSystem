@@ -5,12 +5,13 @@
     <meta http-equiv="content-type" content="text/html charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>操作查询</title>
-    <script src="../js/jquery/jquery-1.9.1.min.js"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
     <link href="../css/admin.css"  rel="stylesheet"/>
     <link href="../css/jquery-ui2.css" rel="stylesheet"  />
     <link href="../css/query.css" rel="stylesheet"  />
-    <script src="../js/bootstrap.js"></script>
-
     <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="../js/jquery.ui.datepicker-zh-CN.js"></script>
     <script src="../js/jquery-ui-timepicker-addon.js"></script>
@@ -33,21 +34,21 @@
 
     </div>
     <div>
-        <table class="table1">
+        <table class="table-bordered" width="100%">
             <thead>
             <tr>
-                <td rowspan="2" class="td1">#</td>
-                <td rowspan="2" class="td1">操作时间</td>
-                <td rowspan="2" class="td1">操作员</td>
-                <td rowspan="2" class="td1">开灯时间</td>
-                <td rowspan="2" class="td1">关灯时间</td>
-                <td rowspan="2" class="td1">亮度</td>
-                <td colspan="3" class="td1">灯</td>
+                <td rowspan="2" >#</td>
+                <td rowspan="2" >操作时间</td>
+                <td rowspan="2" >操作员</td>
+                <td rowspan="2" >开灯时间</td>
+                <td rowspan="2" >关灯时间</td>
+                <td rowspan="2" >亮度</td>
+                <td colspan="3" >灯</td>
             </tr>
             <tr>
-                <td class="td1">集中控制器</td>
-                <td class="td1">组号</td>
-                <td class="td1">灯号</td>
+                <td>集中控制器</td>
+                <td>组号</td>
+                <td>灯号</td>
             </tr>
 
             </thead>

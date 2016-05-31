@@ -9,7 +9,9 @@
 <html>
 <head>
     <title>经纬度控制</title>
-    <script src="../js/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <script src="../js/sitecontrol.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
@@ -25,7 +27,7 @@
             </div><br>
             <div>
                 纬&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度
-                <input type="text" id="latitude"/>
+                <input type="text" id="latitude" />
             </div><br>
             <div>
                 控制天数
@@ -33,7 +35,7 @@
             </div><br>
         </div><br>
         <div>
-            <input type="button" id="sitecontrol" value="控制"/>
+            <input type="button" class="btn btn-primary active" id="siteControl" value="控制" />
         </div>
    </div>
 </body>

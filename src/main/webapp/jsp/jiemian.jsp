@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>高杆灯</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
-    <link href="../css/jiemian.css" rel="stylesheet" />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <link href="../css/jiemian.css" rel="stylesheet" />
     <script src="../js/jiemian.js"></script>
 </head>
 <body>

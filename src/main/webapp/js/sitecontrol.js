@@ -51,12 +51,22 @@ $(function() {
         document.getElementById("latitude").value="";
     });
 
-    $("#sitecontrol").click(function(){
+    $("#siteControl").click(function(){
         var longitude = $("#longitude").val();
         var latitude = $("#latitude").val();
         var controldays = $("#controldays").val();
-        var url="/control/sitecontrol.do?longitude="+longitude+"&latitude="+latitude+"&controldays="+controldays;
-        cmd(url);
+        if(longitude==""){
+            alert("请输入经度！");
+        }else{
+            if(latitude==""){
+                alert("请输入纬度！");
+            }else{
+                var url="/control/sitecontrol.do?longitude="+longitude+"&latitude="+latitude+"&controldays="+controldays;
+                cmd(url);
+                alert("发送命令成功！");
+            }
+        }
+
     })
 
 })
