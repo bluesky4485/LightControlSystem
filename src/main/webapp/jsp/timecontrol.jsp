@@ -9,19 +9,15 @@
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
 
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.datetimepicker.full.js"></script>
+
     <link href="../css/jquery.range.css" rel="stylesheet" />
-    <link href="../css/admin.css"  rel="stylesheet"/>
-    <link href="../css/jquery-ui2.css" rel="stylesheet"  />
-    <link href="../css/timecontrol.css" rel="stylesheet"  />
-    <%--<script src="../js/right2_2.js"></script>--%>
-    <script src="../js/timecontrol.js"></script>
-    <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
     <script src="../js/jquery/jquery.range.js"></script>
-    <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="../js/jquery.ui.datepicker-zh-CN.js"></script>
-    <script src="../js/jquery-ui-timepicker-addon.js"></script>
-    <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
+
+    <link href="../css/timecontrol.css" rel="stylesheet"  />
+    <script src="../js/timecontrol.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
 <div style="margin: 0 auto;width: 100%;height:100%;">
@@ -34,12 +30,12 @@
         <div id="light_time" class="choosetime" >
             <h4 class="text-primary" style="text-align: center">任务时间</h4>
             <%--<div class="div1321">--%>
-                <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;"/><br><br>
+                <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;"/><br>
                 <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;"/>
             <%--</div>--%>
         </div>
         <div class="div2_1">
-                <h4 style="text-align: center"><span class="text-primary">灯的选择</span></h4><br>
+                <h4 style="text-align: center"><span class="text-primary">灯的选择</span></h4>
                 <div style="margin:0 auto;width: 50%;min-width: 200px;">
                     <input id="notall" class="flo1" type="radio" name="suoyou"  value="0" checked="checked">
                     <h4 class="flo1">非所有灯</h4>
@@ -50,7 +46,7 @@
         <div id="choose_light" class="div2_2">
             <div class="div2_2_1">
                 <div style="width: 100%">
-                    <input type="text" id="jizhongtxt" style="width: 50%;"/>
+                    <input type="text" id="jizhongtxt" style="width: 40%;"/>
                     <button   id="jizhong" class=" btn-primary" >
                         <div style="display:none" id="selectjizhong"></div>
                         选择集中选择器

@@ -9,13 +9,11 @@
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
 
-    <link href="../css/admin.css"  rel="stylesheet"/>
-    <link href="../css/jquery-ui2.css" rel="stylesheet"  />
+    <link href="../css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.datetimepicker.full.js"></script>
+
     <link href="../css/query.css" rel="stylesheet"  />
-    <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="../js/jquery.ui.datepicker-zh-CN.js"></script>
-    <script src="../js/jquery-ui-timepicker-addon.js"></script>
-    <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
     <script src="../js/query.js"></script>
 </head>
 <body style="text-align: center">

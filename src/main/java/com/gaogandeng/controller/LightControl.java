@@ -269,7 +269,7 @@ public class LightControl {
         String bright = request.getParameter("bright");
         StringBuffer lightIds = new StringBuffer();
         ControlLog controlLog = new ControlLog();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
         try {
             if(!Strings.isNullOrEmpty(openTime)){

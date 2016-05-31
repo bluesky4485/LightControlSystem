@@ -19,9 +19,6 @@
     <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
     <script src="../js/jquery/jquery.range.js"></script>
     <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="../js/jquery.ui.datepicker-zh-CN.js"></script>
-    <script src="../js/jquery-ui-timepicker-addon.js"></script>
-    <script src="../js/jquery-ui-timepicker-zh-CN.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
 <div style="margin: 0 auto;width: 70%">
