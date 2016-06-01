@@ -9,16 +9,17 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/jquery.range.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery.range.js"></script>
+
+    <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/admin.css"  rel="stylesheet"/>
     <link href="../css/jquery-ui2.css" rel="stylesheet"  />
+    <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
+
     <link href="../css/imcontrol.css" rel="stylesheet"  />
     <%--<script src="../js/right2_2.js"></script>--%>
     <script src="../js/imcontrol.js"></script>
-    <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
-    <script src="../js/jquery/jquery.range.js"></script>
-    <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
 </head>
 <body style="text-align: center;width: 100%">
 <div style="margin: 0 auto;width: 70%">

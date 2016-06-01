@@ -16,8 +16,8 @@ function findData(start_time,stop_time){
         dataType: 'json',
         timeout: 1000,
         cache: false,
-       // beforeSend: LoadFunction, //加载执行方法
-       // error: erryFunction,  //错误执行方法
+        beforeSend: LoadFunction, //加载执行方法
+        error: erryFunction,  //错误执行方法
         success: succFunction //成功执行方法
     })
     function LoadFunction() {
@@ -87,7 +87,7 @@ function findData(start_time,stop_time){
             closeDateObj.appendTo(lineObj);
             brightObj.appendTo(lineObj);
 
-            var devicetableObj=$("<table></table>");
+            var devicetableObj=$("<table style='text-align: center'></table>");
             var devicecolObj=$("<td></td>");
             for(var i=0;i<item.lights.length;i++){
                 var deviceId= item.lights[i].deviceId;
@@ -97,7 +97,7 @@ function findData(start_time,stop_time){
                 devicetableObj.appendTo(devicecolObj);
                 devicecolObj.appendTo(lineObj);
             }
-            var grouptableObj=$("<table></table>");
+            var grouptableObj=$("<table style='text-align: center'></table>");
             var groupcolObj=$("<td></td>");
             for(var i=0;i<item.lights.length;i++){
                 var groupIdObj=$("<tr></tr>");
@@ -108,7 +108,7 @@ function findData(start_time,stop_time){
                 groupcolObj.appendTo(lineObj);
 
             }
-            var ingrouptableObj=$("<table></table>");
+            var ingrouptableObj=$("<table style='text-align: center'></table>");
             var ingroupcolObj=$("<td></td>");
             for(var i=0;i<item.lights.length;i++){
                 var inGroupIdObj=$("<tr></tr>");

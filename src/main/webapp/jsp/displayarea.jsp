@@ -7,6 +7,7 @@
     <title>区域显示</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <script src="../js/displayarea.js"></script>
 </head>
 <body style="position:relative;width: 100%;height: 100%">

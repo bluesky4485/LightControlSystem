@@ -79,7 +79,7 @@ function getjson(){
             deletebutton.click(function(event){
                 if(authority==1){
                     deletecmd(userId);
-                    setTimeout(getjson(),500);
+                    setTimeout(getjson(),1000);
                 }
             })
 

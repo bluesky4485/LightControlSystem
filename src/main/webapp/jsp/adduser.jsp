@@ -37,6 +37,7 @@
 
         <h3><font style="color: red">(*)</font>权限
             <input type="text" placeholder="0/1" id="authority" name="authority"/></h3>
+        <h6 style="color: red">${error2}</h6>
 
         <button type="submit" id="adduser-button" onclick="return checkform(this.form);">提交</button>
     </form>

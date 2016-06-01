@@ -65,29 +65,42 @@ public class UserController {
 
     @RequestMapping(value="/jsp/adduser")
     public String addUser(HttpServletRequest request, Model model){
-        User user = new User();
-        user.setUserName(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
-        user.setPhone(request.getParameter("phone"));
-        user.setAddress(request.getParameter("address"));
-        user.setAuthority(Integer.valueOf(request.getParameter("authority")));
-        List<User> userList = authenticationService.queryAllUsers();
-        Boolean have = false;
-        if(userList!=null){
-            for (User users:userList){
-                if(users.getUserName().equals(user.getUserName())){
-                    have=true;
-                    break;
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String authority = request.getParameter("authority");
+
+        if(!username.equals("")&&!password.equals("")&&!authority.equals("")){
+            User user = new User();
+            user.setUserName(username);
+            user.setPassword(password);
+            user.setPhone(phone);
+            user.setAddress(address);
+            user.setAuthority(Integer.valueOf(authority));
+
+            List<User> userList = authenticationService.queryAllUsers();
+            Boolean have = false;
+            if(userList!=null){
+                for (User users:userList){
+                    if(users.getUserName().equals(user.getUserName())){
+                        have=true;
+                        break;
+                    }
                 }
             }
-        }
-        if(have==false){
-            authenticationService.insertUser(user);
-            return "manage";
+            if(have==false){
+                authenticationService.insertUser(user);
+                return "manage";
+            }else{
+                model.addAttribute("error","用户名已存在");
+                return "adduser";
+            }
         }else{
-            model.addAttribute("error","用户名已被使用");
+            model.addAttribute("error2","请输入");
             return "adduser";
         }
+
 
 
     }

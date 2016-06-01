@@ -33,8 +33,8 @@ public class AreaTest {
 
     @Test
     public void insertArea(){
-        Area area = new Area(5,"ll","494;495;496;497;498;499");
-        areaService.insertArea(area);
+        Area area = new Area(6,"l","494;495;496;497;498;499");
+        areaUtilService.addarea(area);
     }
 
     @Test

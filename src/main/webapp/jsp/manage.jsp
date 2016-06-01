@@ -35,6 +35,6 @@
     </table>
 </div>
 <script src="../js/jquery/jquery-1.9.1.js"></script>
-<script src="../js/right6.js"></script>
+<script src="../js/manager.js"></script>
 </body>
 </html>

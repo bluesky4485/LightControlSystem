@@ -16,6 +16,11 @@
     <link href="../css/jquery.range.css" rel="stylesheet" />
     <script src="../js/jquery/jquery.range.js"></script>
 
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/admin.css"  rel="stylesheet"/>
+    <link href="../css/jquery-ui2.css" rel="stylesheet"  />
+    <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
+
     <link href="../css/timecontrol.css" rel="stylesheet"  />
     <script src="../js/timecontrol.js"></script>
 </head>
@@ -46,7 +51,7 @@
         <div id="choose_light" class="div2_2">
             <div class="div2_2_1">
                 <div style="width: 100%">
-                    <input type="text" id="jizhongtxt" style="width: 40%;"/>
+                    <input type="text" id="jizhongtxt" style="width: 50%;"/>
                     <button   id="jizhong" class=" btn-primary" >
                         <div style="display:none" id="selectjizhong"></div>
                         选择集中选择器
