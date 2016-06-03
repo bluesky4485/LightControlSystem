@@ -16,8 +16,8 @@ function findData(start_time,stop_time){
         dataType: 'json',
         timeout: 1000,
         cache: false,
-        beforeSend: LoadFunction, //加载执行方法
-        error: erryFunction,  //错误执行方法
+        //beforeSend: LoadFunction, //加载执行方法
+        //error: erryFunction,  //错误执行方法
         success: succFunction //成功执行方法
     })
     function LoadFunction() {

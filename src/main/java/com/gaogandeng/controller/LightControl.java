@@ -71,7 +71,7 @@ public class LightControl {
         ControlLogQuery query =new ControlLogQuery();
         String startTime=request.getParameter("start_time");
         String stopTime =request.getParameter("stop_time");
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm");
         try{
             if(!Strings.isNullOrEmpty(stopTime)){
                 Date endDate=sdf.parse(stopTime);
@@ -473,11 +473,32 @@ public class LightControl {
             case 1: cdHex = "0" + cdHex;
                 break;
         }
-        String data = "3"+cdHex+openlimit+closelimit;
+
+        String openlimitHex = Integer.toHexString(Integer.parseInt(openlimit));
+        switch(openlimitHex.length()){
+            case 1: openlimitHex = "000" + openlimitHex;
+                break;
+            case 2: openlimitHex = "00" + openlimitHex;
+                break;
+            case 3: openlimitHex = "0" + openlimitHex;
+                break;
+        }
+
+        String closelimitHex = Integer.toHexString(Integer.parseInt(closelimit));
+        switch(closelimitHex.length()){
+            case 1: closelimitHex = "000" + closelimitHex;
+                break;
+            case 2: closelimitHex = "00" + closelimitHex;
+                break;
+            case 3: closelimitHex = "0" + closelimitHex;
+                break;
+        }
+
+        String data = "3"+cdHex+openlimitHex+closelimitHex;
 
         String cmd = cmdControlService.getCmdInfo("0000","0000","09",data);
         cmd = "@" + cmd + "$";
-        System.out.print(cmd);
+//        System.out.print(cmd);
 
         redisService.pushCmd("gaogandeng:timelytask:list", cmd);
     }

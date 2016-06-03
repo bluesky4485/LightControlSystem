@@ -29,10 +29,10 @@
         <h3><font style="color: red">(*)</font>密码
             <input type="password" placeholder="Password" id="password" name="password"/></h3>
 
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;           电话
+        <h3>&nbsp;&nbsp;           电话
             <input type="text" placeholder="Phone" id="phone" name="phone"/></h3>
 
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;           地址
+        <h3>&nbsp;&nbsp;          地址
             <input type="text" placeholder="Address" id="address" name="address"/></h3>
 
         <h3><font style="color: red">(*)</font>权限

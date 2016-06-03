@@ -89,7 +89,7 @@ public class UserController {
                     }
                 }
             }
-            if(have==false){
+            if(!have){
                 authenticationService.insertUser(user);
                 return "manage";
             }else{
