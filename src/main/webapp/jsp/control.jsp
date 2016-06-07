@@ -8,21 +8,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="content-type" content="text/html charset=utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>控制策略</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
 </head>
-<body style="text-align: center;width: 100%">
-<div style="margin: 0 auto;width: 90%">
-    <div style="margin-top: 10px;height: 40px;">
-        <a href="timecontrol.jsp" class="btn btn-primary active" target="control">定时控制</a>
-        <a href="imcontrol.jsp" class="btn btn-primary active" target="control">即时控制</a>
-        <a href="sitecontrol.jsp" class="btn btn-primary active" target="control">经纬度控制</a>
-        <a href="suncontrol.jsp" class="btn btn-primary active" target="control">光照控制</a>
+<body>
+    <div class="row">
+        <br>
+        <div class="col-xs-2 col-sm-2 col-xs-offset-3 col-sm-offset-3 ">
+            <a href="timecontrol.jsp" class="btn btn-primary active" target="control">
+                定时控制
+            </a>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <a href="imcontrol.jsp" class="btn btn-primary active" target="control">
+                即时控制
+            </a>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <a href="sitecontrol.jsp" class="btn btn-primary active" target="control">
+                经纬度控制
+            </a>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <a href="suncontrol.jsp" class="btn btn-primary active" target="control">
+                光照控制
+            </a>
+        </div>
     </div>
-    <div style="width: 100%;height: 90%;">
-        <iframe name="control" style="width: 98%;height: 100%;" src="timecontrol.jsp">
-        </iframe>
+
+    <hr style="border: 1px blue solid"/>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <iframe name="control" style="width: 100%;height: 100%" scrolling="no" frameborder="no" src="timecontrol.jsp">
+            </iframe>
+        </div>
     </div>
-</div>
+
 </body>
 </html>

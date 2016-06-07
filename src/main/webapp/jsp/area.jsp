@@ -11,17 +11,20 @@
     <title>区域分组</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
 </head>
-<body style="text-align: center;width: 100%">
-<div style="margin: 0 auto;width: 90%">
-    <div style="height: 5%;width: 100%;margin-top: 10px;">
-        <a target="area" href="addarea.jsp"><button>增加区域</button></a>
-        <%--<button>编辑区域</button>--%>
-        <%--<a target="area" href="deletearea.jsp"><button>删除区域</button></a>--%>
+<body>
+    <div class="row">
+        <div class="col-sm-12" style="text-align: center">
+            <a target="area" href="addarea.jsp"><button>增加区域</button></a>
+        </div>
     </div>
-    <div style="height: 90%;width: 100%;">
-        <iframe name="area" src="displayarea.jsp" style="width: 100%;height: 100%">
-        </iframe>
+
+    <hr style="border: 1px blue solid"/>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <iframe name="area" src="displayarea.jsp" scrolling="no" frameborder="no" style="width: 100%;height: 100%">
+            </iframe>
+        </div>
     </div>
-</div>
 </body>
 </html>

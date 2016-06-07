@@ -6,8 +6,9 @@
     <meta http-equiv="content-type" content="text/html charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>login</title>
+    <%--<link href="../css/bootstrap.css" rel="stylesheet" />--%>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <script src="../js/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="../js/login.js" type="text/javascript"></script>
 </head>
 <body>

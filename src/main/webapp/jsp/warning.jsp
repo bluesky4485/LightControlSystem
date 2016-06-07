@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>警情处理</title>
     <link href="../css/bootstrap.css" rel="stylesheet" />
-    <link href="../css/warning.css" rel="stylesheet" />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <link href="../css/warning.css" rel="stylesheet" />
     <script src="../js/warning.js"></script>
 </head>
-<body style="text-align: center;width: 100%">
-<div style="margin: 0 auto;width: 70%">
-    <div style="margin-top: 10px;">
-        <font style="color: #1a8cff;text-align: center;font-size: x-large;">故障报警</font>
+<body>
+<div class="row">
+    <div class="col-sm-12" style="text-align: center">
+        <span style="color: #1a8cff;text-align: center;font-size: x-large;">故障报警</span>
     </div>
-    <div class="div1">
+</div>
+<div class="row">
+    <div class=" col-sm-12　">
         <table class="table1" id="tab">
             <thead style="text-align: center">
             <tr class="tr1">

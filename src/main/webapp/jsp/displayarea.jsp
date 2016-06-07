@@ -10,8 +10,12 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/displayarea.js"></script>
 </head>
-<body style="position:relative;width: 100%;height: 100%">
-    <div id="arealist" style="width: 100%;height: 100%;">
+<body>
+<div class="row">
+    <div id="arealist" class="col-sm-12">
+
     </div>
+</div>
+
 </body>
 </html>

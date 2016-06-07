@@ -4,7 +4,6 @@ import com.gaogandeng.QueryCondition.ControlLogQuery;
 import com.gaogandeng.model.ControlLog;
 import com.gaogandeng.model.Light;
 import com.gaogandeng.model.User;
-import com.gaogandeng.service.ControlLogService;
 import com.gaogandeng.service.LightService;
 import com.gaogandeng.utils.AuthenticationService;
 import com.gaogandeng.utils.CmdControlService;

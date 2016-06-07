@@ -54,11 +54,11 @@ $(function(){
                 var areaId = item.areaId;
                 var areaName = item.areaName;
 
-                var divObj = $("<div style='float:left;border: 1px solid skyblue;width: 25%;height:300px;text-align: center'></div>")
+                var divObj = $("<div style='float:left;border: 1px solid skyblue;width:33.3%;'></div>")
                 var divtopObj = $("<div style='width: 100%;text-align: center'></div>")
                 var divbotObj = $("<div style='width: 100%;text-align: center'></div>")
 
-                divtopObj.html("区域编号："+"<font color='red'>"+areaId+"</font>"+"  区域名称:"+"<font color='red'>"+areaName+"</font>"+"&nbsp;");
+                divtopObj.html("区域编号："+"<span color='red'>"+areaId+"</span>"+"  区域名称:"+"<span color='red'>"+areaName+"</span>"+"&nbsp;");
 
                 var tableObj = $("<table style='width: 100%;text-align: center'></table>")
                 var tableheadObj = $("<tr style='background-color: #0e90d2'><td>id</td><td>集中控制器</td><td>组号</td><td>灯号</td><td>删除</td></tr>")

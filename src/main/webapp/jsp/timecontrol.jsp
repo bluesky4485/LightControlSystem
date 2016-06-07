@@ -76,7 +76,7 @@
                     </button>
                 </div>
             </div>
-        </div><br>
+        </div>
         <div>
             <%--<input type="button" class="btn btn-primary active" id="timecontrol" value="控制" />--%>
             <button type="button" id="timeControl" class="btn btn-primary active" >控制</button>
