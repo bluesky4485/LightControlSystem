@@ -12,7 +12,7 @@ $(function(){
         step: 1,
         scale: [0,25,50,75,100],
         format: '%s',
-        width: 300,
+        width: 280,
         showLabels: true,
         showScale: true
     });
@@ -130,12 +130,12 @@ $(function(){
     //     });
 
     $("#all").click(function(){
-        $('div#choose_light').hide();
+        $('#choose_light').hide();
     });
     
 
     $("#notall").click(function(){
-        $('div#choose_light').show();
+        $('#choose_light').show();
     });
 
 

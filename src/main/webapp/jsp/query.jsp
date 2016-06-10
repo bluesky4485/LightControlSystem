@@ -29,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12" style="text-align: center">
-            <input type="button" value="点击查询" style="font-size: large;color: #1a8cff" onclick="findData(document.getElementById('cha_start_time').value,document.getElementById('cha_stop_time').value)"/>
+            <input type="button" value="点击查询" class="btn btn-primary" onclick="findData(document.getElementById('cha_start_time').value,document.getElementById('cha_stop_time').value)"/>
         </div>
     </div>
     <div class="row">

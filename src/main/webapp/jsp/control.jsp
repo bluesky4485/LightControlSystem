@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <hr style="border: 1px blue solid"/>
+    <hr style="border: 1px #2b669a solid"/>
 
     <div class="row">
         <div class="col-xs-12 col-sm-12">

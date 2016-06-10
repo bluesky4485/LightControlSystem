@@ -13,12 +13,13 @@
 </head>
 <body>
     <div class="row">
+        <br>
         <div class="col-sm-12" style="text-align: center">
-            <a target="area" href="addarea.jsp"><button>增加区域</button></a>
+            <a target="area" href="addarea.jsp"><button class="btn btn-primary">增加区域</button></a>
         </div>
     </div>
 
-    <hr style="border: 1px blue solid"/>
+    <hr style="border: 1px #2b669a solid"/>
 
     <div class="row">
         <div class="col-sm-12">

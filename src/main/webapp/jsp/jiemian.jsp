@@ -63,7 +63,7 @@
         <div class="col-xs-10 col-md-10">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <iframe name="right" class="iframe" scrolling="no" src="jsp/statement.jsp">
+                    <iframe name="right" class="iframe"  src="jsp/statement.jsp">
                     </iframe>
                 </div>
             </div>
