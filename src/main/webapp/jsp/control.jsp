@@ -37,7 +37,7 @@
     <hr style="border: 1px #2b669a solid"/>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12">
+        <div class="col-xs-12 col-sm-12" style="height: 500px">
             <iframe name="control" style="width: 100%;height: 100%" scrolling="no" frameborder="no" src="timecontrol.jsp">
             </iframe>
         </div>

@@ -24,7 +24,7 @@
     <%--<link href="../css/timecontrol.css" rel="stylesheet"  />--%>
     <script src="../js/timecontrol.js"></script>
 </head>
-<body>
+<body style="text-align: center">
    <div class="row">
        <div class="col-xs-4 col-xs-offset-4" style="border: 1px solid forestgreen;">
            <h4 class="text-primary" style="text-align: center">灯的亮度</h4><br>
@@ -40,7 +40,7 @@
        <div class="col-xs-4 col-xs-offset-4" style="border: 1px solid forestgreen;">
            <h4 class="text-primary" style="text-align: center">任务时间</h4><br>
            <div class="row">
-               <div class="col-xs-8 col-xs-offset-3">
+               <div class="col-xs-12" >
                    <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;"/>
                    <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;"/>
                </div>
@@ -52,7 +52,7 @@
        <div class="col-xs-4 col-xs-offset-4" style="border: 1px solid forestgreen;">
            <h4 class="text-primary" style="text-align: center">灯的选择</h4><br>
            <div class="row">
-               <div class="col-xs-8 col-xs-offset-3">
+               <div class="col-xs-10 col-xs-offset-2">
                    <input id="notall" style="float: left;" type="radio" name="suoyou"  value="0" checked="checked">
                    <h4 style="float: left;">非所有灯&nbsp;&nbsp;</h4>
                    <input id="all" style="float: left;" type="radio" name="suoyou" value="1" >

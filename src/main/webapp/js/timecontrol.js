@@ -12,7 +12,7 @@ $(function(){
         step: 1,
         scale: [0,25,50,75,100],
         format: '%s',
-        width: 280,
+        width: 270,
         showLabels: true,
         showScale: true
     });
@@ -63,7 +63,7 @@ $(function(){
                     }else{
                         if(open_time==""){
                             bright=0;
-                            url="/control/timergroup.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
+                            url="/control/timer.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
                             if(confirm("所有灯关灯时间："+close_time+" 亮度为"+bright)){
                                 cmd(url);
                             }
@@ -71,7 +71,7 @@ $(function(){
                             if(bright==0) {
                                 alert("请选择亮度！");
                             }else{
-                                url="/control/timergroup.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
+                                url="/control/timer.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
                                 if(confirm("所有灯开灯时间："+open_time+" 关灯时间："+close_time+" 亮度为"+bright)){
                                     cmd(url);
                                 }
@@ -88,7 +88,7 @@ $(function(){
                             if(num_jizhong==""){
                                 alert("请选择需要控制的灯");
                             }else{
-                                url="/control/timergroup.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
+                                url="/control/timer.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
                                 if(confirm("开灯："+open_time+" 关灯："+close_time+" device_no="+num_jizhong+" group_no="+num_zu+" deng_no="+num_deng+" 亮度为"+bright)){
                                     cmd(url);
                                 }
@@ -101,7 +101,7 @@ $(function(){
                                 if(num_jizhong==""){
                                     alert("请选择需要控制的灯");
                                 }else{
-                                    url="/control/timergroup.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
+                                    url="/control/timer.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
                                     if(confirm("开灯："+open_time+" 关灯："+close_time+" device_no="+num_jizhong+" group_no="+num_zu+" deng_no="+num_deng+" 亮度为"+bright)){
                                         cmd(url);
                                     }
