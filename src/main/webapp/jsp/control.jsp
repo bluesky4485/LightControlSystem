@@ -12,7 +12,7 @@
 <body>
     <div class="row">
         <br>
-        <div class="col-xs-2 col-sm-2 col-xs-offset-3 col-sm-offset-3 ">
+        <div class="col-xs-2 col-sm-2 col-xs-offset-1 col-sm-offset-1 ">
             <a href="timecontrol.jsp" class="btn btn-primary active" target="control">
                 定时控制
             </a>
@@ -30,6 +30,11 @@
         <div class="col-xs-2 col-sm-2">
             <a href="suncontrol.jsp" class="btn btn-primary active" target="control">
                 光照控制
+            </a>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <a href="areacontrol.jsp" class="btn btn-primary active" target="control">
+                区域控制
             </a>
         </div>
     </div>

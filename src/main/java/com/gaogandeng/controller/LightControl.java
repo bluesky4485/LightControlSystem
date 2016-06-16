@@ -507,90 +507,101 @@ public class LightControl {
         final String groupNo = request.getParameter("group_no");
         final String dengNo = request.getParameter("deng_no");
         final String bright = request.getParameter("bright");
+        final String controlDays = request.getParameter("control_days");
         final StringBuffer lightIds = new StringBuffer();
 
+        //设置执行时间
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);//每天
+        //定制每天的00:00:00执行，
+        calendar.set(year, month, day, 0, 0, 0);
+        Date date = calendar.getTime();
+        final Timer timer = new Timer();
+        System.out.println("执行时间："+date);
 
 
-        TimerTask task = new TimerTask(){
+        final ControlLog controlLog = new ControlLog();
 
+//        Calendar calendar = Calendar.getInstance();
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH);
+//        int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-            int count = 0;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
-            public void run() {
-                ControlLog controlLog = new ControlLog();
+        String[] open = openTime.split(" ");
+        String[] close = closeTime.split(" ");
 
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
+        String newOpenTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+open[1];
+        String newCloseTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+close[1];
 
-                SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        try {
+            if(!Strings.isNullOrEmpty(newOpenTime)){
+                controlLog.setOpenTime(df.parse(newOpenTime));
+            }
+            if(!Strings.isNullOrEmpty(newCloseTime)){
+                controlLog.setCloseTime(df.parse(newCloseTime));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-                String[] open = openTime.split(" ");
-                String[] close = closeTime.split(" ");
-
-                String newOpenTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+open[1];
-                String newCloseTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+close[1];
-
-                try {
-                    if(!Strings.isNullOrEmpty(newOpenTime)){
-                        controlLog.setOpenTime(df.parse(newOpenTime));
-                    }
-                    if(!Strings.isNullOrEmpty(newCloseTime)){
-                        controlLog.setCloseTime(df.parse(newCloseTime));
-                    }
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-
-                Light queryLight = new Light();
-                if(Strings.isNullOrEmpty(deviceNo)){
-                    List<Light> lights = lightService.findAllLights();
+        Light queryLight = new Light();
+        if(Strings.isNullOrEmpty(deviceNo)){
+            List<Light> lights = lightService.findAllLights();
+            for(Light light : lights){
+                lightIds.append(light.getId() + ";");
+            }
+        }else if(Strings.isNullOrEmpty(groupNo)){
+            queryLight.setDeviceId(deviceNo);
+            List<Light> lights = lightService.findLight(queryLight);
+            for(Light light : lights){
+                lightIds.append(light.getId() + ";");
+            }
+        }else if(Strings.isNullOrEmpty(dengNo)){
+            queryLight.setDeviceId(deviceNo);
+            String[] groups = groupNo.split(";");
+            for(String gs : groups){
+                queryLight.setGroupId(gs);
+                List<Light> lights = lightService.findLight(queryLight);
+                if(lights != null){
                     for(Light light : lights){
                         lightIds.append(light.getId() + ";");
                     }
-                }else if(Strings.isNullOrEmpty(groupNo)){
-                    queryLight.setDeviceId(deviceNo);
+                }
+            }
+        }else{              //都不为空
+            queryLight.setDeviceId(deviceNo);
+            String []groupNos = groupNo.split(";");
+            String []dengNos = dengNo.split(";");
+            for(String gs : groupNos){
+                queryLight.setGroupId(gs);
+                for(String ds : dengNos){
+                    queryLight.setInGroupId(ds);
                     List<Light> lights = lightService.findLight(queryLight);
-                    for(Light light : lights){
-                        lightIds.append(light.getId() + ";");
-                    }
-                }else if(Strings.isNullOrEmpty(dengNo)){
-                    queryLight.setDeviceId(deviceNo);
-                    String[] groups = groupNo.split(";");
-                    for(String gs : groups){
-                        queryLight.setGroupId(gs);
-                        List<Light> lights = lightService.findLight(queryLight);
-                        if(lights != null){
-                            for(Light light : lights){
-                                lightIds.append(light.getId() + ";");
-                            }
-                        }
-                    }
-                }else{              //都不为空
-                    queryLight.setDeviceId(deviceNo);
-                    String []groupNos = groupNo.split(";");
-                    String []dengNos = dengNo.split(";");
-                    for(String gs : groupNos){
-                        queryLight.setGroupId(gs);
-                        for(String ds : dengNos){
-                            queryLight.setInGroupId(ds);
-                            List<Light> lights = lightService.findLight(queryLight);
-                            if(lights != null){
-                                for(Light light : lights){
-                                    lightIds.append(light.getId() + ";");
-                                }
-                            }
+                    if(lights != null){
+                        for(Light light : lights){
+                            lightIds.append(light.getId() + ";");
                         }
                     }
                 }
+            }
+        }
 
 
-                controlLog.setBright(Integer.parseInt(bright)*255/100);
+        controlLog.setBright(Integer.parseInt(bright)*255/100);
 
-                controlLog.setLightIds(lightIds.toString());
-                //TODO 自己添加当前用户信息
-                controlLog.setUser(authenticationService.queryUserById(1));
+        controlLog.setLightIds(lightIds.toString());
+        //TODO 自己添加当前用户信息
+        controlLog.setUser(authenticationService.queryUserById(1));
+
+        //具体任务
+        TimerTask task = new TimerTask(){
+            private int count = 0;
+            public void run() {
+
                 Map<Date, String> tasks = cmdControlService.insertControlLog(controlLog);
                 for(Date date : tasks.keySet()){
                     String dateAfterChange =  String.valueOf(date.getTime()/1000);
@@ -599,22 +610,18 @@ public class LightControl {
 
                 }
                 ++count;
-                System.out.println("时间=" + new Date() + " 执行了第" + count + "次"); // 1次
+                System.out.println("时间：" + new Date() + " 执行了第" + count + "次"); // 1次
+                if(!controlDays.equals("0")){
+                    if (count == Integer.parseInt(controlDays)) {
+                        System.out.println("定时器停止了");
+                        timer.cancel();// 停止定时器
+                    }
+                }
+
             }
         };
 
-
-        //设置执行时间
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);//每天
-        //定制每天的07:59:00执行，
-        calendar.set(year, month, day, 0, 0, 0);
-        Date date = calendar.getTime();
-        Timer timer = new Timer();
-        System.out.println(date);
-
+        //定期执行
         timer.schedule(task, date);
     }
 

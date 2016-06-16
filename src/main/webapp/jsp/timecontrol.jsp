@@ -42,7 +42,8 @@
            <div class="row">
                <div class="col-xs-12" >
                    <input name="act_start_time" id="act_start_time" type="text"  value="" placeholder="开灯时间" style="cursor: pointer;"/>
-                   <input name="act_stop_time" id="act_stop_time" type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;"/>
+                   <input name="act_stop_time"  id="act_stop_time"  type="text"  value="" placeholder="关灯时间"  style="cursor: pointer;"/>
+                   <input name="controldays"    id="controldays"    type="text"  value="" placeholder="控制天数，默认永久(0)" style="cursor: pointer;"/>
                </div>
            </div><br>
        </div>
