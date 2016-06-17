@@ -27,7 +27,6 @@ $(function(){
         var bright = $(".single-slider").val();
         var area = $('input:text[id=areatxt]').val();
         var url;
-
         
         url="/area/timelyControl.do?bright="+bright+"&areaNo="+area;
         if(confirm(" 亮度为"+bright+" 区域："+area)){
