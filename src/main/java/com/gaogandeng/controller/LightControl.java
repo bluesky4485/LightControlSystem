@@ -227,13 +227,11 @@ public class LightControl {
 
                 }
                 data = data + tmp ;
-//              System.out.println(data);
             }
         }
 
         String cmd = cmdControlService.getCmdInfo(deviceNo, "0000", codeNo, data);
         cmd = "@" + cmd + "$";
-//        System.out.println(cmd);
         redisService.pushCmd("gaogandeng:timelytask:list", cmd);
 
         ControlLog controlLog = new ControlLog();
@@ -252,103 +250,6 @@ public class LightControl {
         cmdControlService.insertControlLog(controlLog);
     }
 
-    @RequestMapping(value = "/timergroup")
-    public @ResponseBody
-    void controlTimeCmd(HttpServletRequest request, HttpServletResponse response){
-        String openTime = request.getParameter("open_time");
-        String closeTime = request.getParameter("close_time");
-        String deviceNo = request.getParameter("device_no");
-        String groupNo = request.getParameter("group_no");
-        String dengNo = request.getParameter("deng_no");
-        String bright = request.getParameter("bright");
-        StringBuffer lightIds = new StringBuffer();
-        ControlLog controlLog = new ControlLog();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-
-//        try {
-//            if(!Strings.isNullOrEmpty(openTime)){
-//                controlLog.setOpenTime(df.parse(openTime));
-//            }
-//            if(!Strings.isNullOrEmpty(closeTime)){
-//                controlLog.setCloseTime(df.parse(closeTime));
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-
-//        Light queryLight = new Light();
-//        if(Strings.isNullOrEmpty(deviceNo)){
-//            List<Light> lights = lightService.findAllLights();
-//            for(Light light : lights){
-//                lightIds.append(light.getId() + ";");
-//            }
-//        }else if(Strings.isNullOrEmpty(groupNo)){
-//            queryLight.setDeviceId(deviceNo);
-//            List<Light> lights = lightService.findLight(queryLight);
-//            for(Light light : lights){
-//                lightIds.append(light.getId() + ";");
-//            }
-//        }else if(Strings.isNullOrEmpty(dengNo)){
-//            queryLight.setDeviceId(deviceNo);
-//            String[] groups = groupNo.split(";");
-//            for(String gs : groups){
-//                queryLight.setGroupId(gs);
-//                List<Light> lights = lightService.findLight(queryLight);
-//                if(lights != null){
-//                    for(Light light : lights){
-//                        lightIds.append(light.getId() + ";");
-//                    }
-//                }
-//            }
-//        }else{              //都不为空
-//            queryLight.setDeviceId(deviceNo);
-//            String []groupNos = groupNo.split(";");
-//            String []dengNos = dengNo.split(";");
-//            for(String gs : groupNos){
-//                queryLight.setGroupId(gs);
-//                for(String ds : dengNos){
-//                    queryLight.setInGroupId(ds);
-//                    List<Light> lights = lightService.findLight(queryLight);
-//                    if(lights != null){
-//                        for(Light light : lights){
-//                            lightIds.append(light.getId() + ";");
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//
-//        controlLog.setBright(Integer.parseInt(bright)*255/100);
-//
-//        controlLog.setLightIds(lightIds.toString());
-////        System.out.println(lightIds.toString());
-//
-//        //TODO 自己添加当前用户信息
-//        controlLog.setUser(authenticationService.queryUserById(1));
-//        /**
-//         * 获得所有细分任务后的时间任务
-//         */
-//        Map<Date, String> tasks = cmdControlService.insertControlLog(controlLog);
-////        System.out.print("DD");
-//        for(Date date : tasks.keySet()){
-////            String dt = df.format(date);
-//////            System.out.println(dt);
-////
-////            Date date1 = null;
-////            try {
-////                date1 = df.parse(dt);
-////            } catch (ParseException e) {
-////                e.printStackTrace();
-////            }
-//            String dateAfterChange =  String.valueOf(date.getTime()/1000);
-////            System.out.println(dateAfterChange);
-//            redisService.insertMap("gaogandeng:timertask:hash",dateAfterChange, tasks.get(date));
-//            redisService.pushTimeCmd("gaogandeng:timertask:list", dateAfterChange);
-//
-//        }
-
-    }
 
 
     @RequestMapping(value = "/sitecontrol")
@@ -524,10 +425,6 @@ public class LightControl {
 
         final ControlLog controlLog = new ControlLog();
 
-//        Calendar calendar = Calendar.getInstance();
-//        int year = calendar.get(Calendar.YEAR);
-//        int month = calendar.get(Calendar.MONTH);
-//        int day = calendar.get(Calendar.DAY_OF_MONTH);
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 

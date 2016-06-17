@@ -29,17 +29,13 @@ $(function(){
 
 
     $("#imControl").click(function() {
-        // var control = $('input:radio[name=control]:checked').val();//即时：0  定时：1
         var bright = $(".single-slider").val();
-        // var open_time= $('input:text[name=act_start_time]').val();
-        // var close_time= $('input:text[name=act_stop_time]').val();
         var all=$('input:radio[name=suoyou]:checked').val();//所有：1
         var num_jizhong = $('input:text[id=jizhongtxt]').val();
         var num_zu = $('input:text[id=zutxt]').val();
         var num_deng = $('input:text[id=lighttxt]').val();
         var url;
-        //var username = ${user.userName};
-        // if(control==0){              //即时控制
+        
             if(all==1){           //所有的灯
                 url="/control/timelyall.do?bright="+bright;
                 if(confirm("所有灯亮度为"+bright)){
@@ -55,79 +51,10 @@ $(function(){
                     }
                 }
             }
-        // }else{                    //定时控制
-        //     if(all==1){            //所有灯
-        //         if(open_time==""&&close_time==""){
-        //             alert("请选择时间！");
-        //         }else{
-        //             if(open_time==""){
-        //                 bright=0;
-        //                 url="/control/timergroup.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
-        //                 if(confirm("所有灯关灯时间："+close_time+" 亮度为"+bright+"con"+control)){
-        //                     cmd(url);
-        //                 }
-        //             }else{
-        //                 if(bright==0) {
-        //                     alert("请选择亮度！");
-        //                 }else{
-        //                     url="/control/timergroup.do?bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
-        //                     if(confirm("所有灯开灯时间："+open_time+" 关灯时间："+close_time+" 亮度为"+bright)){
-        //                         cmd(url);
-        //                     }
-        //                 }
-        //             }
-        //
-        //         }
-        //     }else{          //非所有灯
-        //         if(open_time==""&&close_time==""){
-        //             alert("请选择时间！");
-        //         }else{
-        //             if(open_time==""){
-        //                 bright=0;
-        //                 if(num_jizhong==""){
-        //                     alert("请选择需要控制的灯");
-        //                 }else{
-        //                     url="/control/timergroup.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
-        //                     if(confirm("开灯："+open_time+" 关灯："+close_time+" device_no="+num_jizhong+" group_no="+num_zu+" deng_no="+num_deng+" 亮度为"+bright)){
-        //                         cmd(url);
-        //                     }
-        //                 }
-        //             }
-        //             else{
-        //                 if(bright==0) {
-        //                     alert("请选择亮度！");
-        //                 }else{
-        //                     if(num_jizhong==""){
-        //                         alert("请选择需要控制的灯");
-        //                     }else{
-        //                         url="/control/timergroup.do?device_no="+num_jizhong+"&group_no="+num_zu+"&deng_no="+num_deng+"&bright="+bright+"&open_time="+open_time+"&close_time="+close_time;
-        //                         if(confirm("开灯："+open_time+" 关灯："+close_time+" device_no="+num_jizhong+" group_no="+num_zu+" deng_no="+num_deng+" 亮度为"+bright)){
-        //                             cmd(url);
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        
     });
 
-    //$( "input[name='act_start_time'],input[name='act_stop_time']" ).datetimepicker();
-
-    // $("#controlnow").click(function(){
-    //     $('#light_time').fadeOut();
-    //     //}
-    //     //, function (){
-    //     //    $('div#switch').fadeIn();
-    // });
-    //
-    // $("#controltime").click(function(){
-    //     $('#light_time').fadeIn();
-    //     //}
-    //     //, function (){
-    //     //$('div#switch').fadeOut();
-    // });
-
+    
     $("#all").click(function(){
         $('#choose_light').hide();
     });
@@ -136,16 +63,7 @@ $(function(){
     $("#notall").click(function(){
         $('#choose_light').show();
     });
-
-
-    $(document).ready(function(){
-        $(".flip2").click(function(){
-            $(".panel2").slideToggle("slow");
-        });
-    });
-
-
-
+    
     ajax2();
 });
 

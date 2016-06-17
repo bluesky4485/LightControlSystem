@@ -9,6 +9,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <script src="../js/jquery/jquery-1.9.1.js"></script>
     <script src="../js/bootstrap.js"></script>
+
     <link href="../css/jquery.range.css" rel="stylesheet" />
     <script src="../js/jquery/jquery.range.js"></script>
 
@@ -17,8 +18,6 @@
     <link href="../css/jquery-ui2.css" rel="stylesheet"  />
     <script src="../js/jquery/jquery.artDialog.js?skin=idialog"></script>
 
-    <%--<link href="../css/imcontrol.css" rel="stylesheet"  />--%>
-    <%--<script src="../js/right2_2.js"></script>--%>
     <script src="../js/imcontrol.js"></script>
 </head>
 <body>
