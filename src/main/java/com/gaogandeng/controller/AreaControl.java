@@ -148,18 +148,22 @@ public class AreaControl {
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
-        String[] open = openTime.split(" ");
-        String[] close = closeTime.split(" ");
-
-        String newOpenTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+open[1];
-        String newCloseTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+close[1];
-
+        String[] open ;
+        String[] close ;
+        String newOpenTime;
+        String newCloseTime;
         try {
-            if(!Strings.isNullOrEmpty(newOpenTime)){
+            if(!Strings.isNullOrEmpty(openTime)){
+                open = openTime.split(" ");
+                newOpenTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+open[1];
                 controlLog.setOpenTime(df.parse(newOpenTime));
+
             }
-            if(!Strings.isNullOrEmpty(newCloseTime)){
+            if(!Strings.isNullOrEmpty(closeTime)){
+                close = closeTime.split(" ");
+                newCloseTime = Integer.valueOf(year)+"/"+Integer.valueOf(month+1)+"/"+Integer.valueOf(day)+" "+close[1];
                 controlLog.setCloseTime(df.parse(newCloseTime));
+
             }
         }catch (Exception e){
             e.printStackTrace();
