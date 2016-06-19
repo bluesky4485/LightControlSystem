@@ -208,7 +208,7 @@ public class AreaControl {
         };
 
         //定期执行
-        timer.schedule(task, date);
+        timer.schedule(task, date,24*60*60*1000);
 
     }
 
