@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by lanxing on 16-3-17.
@@ -524,7 +526,7 @@ public class LightControl {
         };
 
         //定期执行
-        timer.schedule(task, date,24*60*60*1000);
+        timer.schedule(task, date,1000);
     }
 
 
