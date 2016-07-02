@@ -138,7 +138,7 @@ public class AreaControl {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);//每天
         //定制每天的00:00:00执行，
-        calendar.set(year, month, day, 0, 0, 0);
+        calendar.set(year, month, day+1, 0, 0, 0);
         Date date = calendar.getTime();
         final Timer timer = new Timer();
         System.out.println("执行时间："+date);

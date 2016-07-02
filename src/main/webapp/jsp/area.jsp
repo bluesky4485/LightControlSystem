@@ -23,7 +23,7 @@
     <hr style="border: 1px #2b669a solid"/>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="height: 500px;">
             <iframe name="area" src="displayarea.jsp" scrolling="no" frameborder="no" style="width: 100%;height: 100%">
             </iframe>
         </div>

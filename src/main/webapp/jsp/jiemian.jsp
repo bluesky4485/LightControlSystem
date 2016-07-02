@@ -54,9 +54,11 @@
                         <a href="jsp/backup.jsp" target="right" class="btn btn-primary">
                             <img src="../img/7.png" style="width:30%" />备份还原
                         </a>
-                        <a href="jsp/manage.jsp" target="right" class="btn btn-primary">
-                            <img src="../img/8.png" style="width:30%" />系统管理
-                        </a>
+                        <c:if test='${user.authority==0}'>
+                            <a href="jsp/manage.jsp" target="right" class="btn btn-primary">
+                                <img src="../img/8.png" style="width:30%" />系统管理
+                            </a>
+                        </c:if>
                     </div>
                 </div>
             </div>

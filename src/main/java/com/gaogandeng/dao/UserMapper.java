@@ -8,9 +8,9 @@ import java.util.List;
  * Created by lanxing on 16-3-16.
  */
 public interface UserMapper {
-    public List<User> findAllUsers();
-    public User findUserByName(String userName);
-    public void insertUser(User user);
-    public User findUserById(Integer userId);
-    public void deleteUserById(Integer userId);
+    List<User> findAllUsers();
+    User findUserByName(String userName);
+    void insertUser(User user);
+    User findUserById(Integer userId);
+    void deleteUserById(Integer userId);
 }

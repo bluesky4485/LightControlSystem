@@ -17,9 +17,6 @@
 </head>
 <body>
 <div style="margin: 0 auto;width: 70%;text-align: center">
-    <div>
-        <span style="color: #1a8cff;font-size: 200%">增加区域&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    </div>
     <div style="margin-top: 10px">
         <form class="form" name="form" id="adduser" method="post" action="/area/addarea.do">
 
