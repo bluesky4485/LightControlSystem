@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by lanxing on 16-3-17.
@@ -417,7 +419,7 @@ public class LightControl {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);//每天
         //定制每天的00:00:00执行，
-        calendar.set(year, month, day, 0, 0, 0);
+        calendar.set(year, month, day+1, 0, 0, 0);
         Date date = calendar.getTime();
         final Timer timer = new Timer();
         System.out.println("执行时间："+date);
@@ -524,7 +526,7 @@ public class LightControl {
         };
 
         //定期执行
-        timer.schedule(task, date);
+        timer.schedule(task, date,24*60*60*1000);
     }
 
 

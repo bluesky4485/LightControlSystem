@@ -13,4 +13,5 @@ public interface WarningLogMapper {
     List<WarningLog> findAllWarningLogs();
     List<WarningLog> findWarningLogs(WarningLogQuery query);
     void confirmWarning(Integer id);
+
 }
