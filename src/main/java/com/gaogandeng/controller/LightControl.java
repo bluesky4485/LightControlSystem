@@ -86,7 +86,7 @@ public class LightControl {
             if(lights == null){
                 lights = Lists.newArrayList();
             }
-            for(int i=0;i<lightIds.length-1;i++){
+            for(int i=0;i<lightIds.length;i++){
                 Light light=lightService.findLightById(Integer.valueOf(lightIds[i]));
                 lights.add(light);
             }

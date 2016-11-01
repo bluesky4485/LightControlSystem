@@ -31,7 +31,7 @@ public class UserController {
 
     @RequestMapping(value="/login")
     public String saveUser(HttpServletRequest request, UserForm userForm){
-        //logger.info("saveUser called");
+        logger.info("saveUser called");
         userForm.setUserName(request.getParameter("username"));
         userForm.setPassword(request.getParameter("password"));
 

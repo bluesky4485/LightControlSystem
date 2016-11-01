@@ -9,15 +9,15 @@ public class WarningLogQuery {
     private Integer id;
     private Date startTime;
     private Date endTime;
-//    private Integer status=0;
+    private Integer status=0;
 
-//    public Integer getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(Integer status) {
-//        this.status = status;
-//    }
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;

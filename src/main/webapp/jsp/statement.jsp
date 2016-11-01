@@ -21,18 +21,19 @@
 
 </head>
 <body>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <canvas id="canvas"></canvas>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <canvas id="lightrate"  />
-        </div>
-        <div class="col-sm-6">
-            <canvas id="failurerate"  />
-        </div>
-    </div>
+    <%--<div class="row">--%>
+        <%--<div class="col-sm-6 col-sm-offset-3">--%>
+            <%--<canvas id="canvas"></canvas>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+    <%--<div class="row">--%>
+        <%--<div class="col-sm-6">--%>
+            <%--<canvas id="lightrate"  />--%>
+        <%--</div>--%>
+        <%--<div class="col-sm-6">--%>
+            <%--<canvas id="failurerate"  />--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<div>hello</div>
 </body>
 </html>

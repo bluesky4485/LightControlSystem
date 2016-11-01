@@ -46,9 +46,9 @@
             AND warninglogs.create_time &lt;= #{endTime}
         </if>
 
-        <!--<if test="status != null">-->
-            <!--AND warninglogs.status = #{status}-->
-        <!--</if>-->
+        <if test="status != null">
+            AND warninglogs.status = #{status}
+        </if>
     </select>
 
     <select id="confirmWarning" parameterType="Integer">

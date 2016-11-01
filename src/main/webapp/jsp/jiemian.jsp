@@ -36,9 +36,9 @@
                         <a href="jsp/statement.jsp" target="right" class="btn btn-primary">
                             <img src="../img/1.png" style="width:30%"/>综合首页
                         </a>
-                        <a href="jsp/map.jsp" target="right" class="btn btn-primary">
-                            <img src="../img/2.png" style="width:30%"/>地图监控
-                        </a>
+                        <%--<a href="jsp/map.jsp" target="right" class="btn btn-primary">--%>
+                            <%--<img src="../img/2.png" style="width:30%"/>地图监控--%>
+                        <%--</a>--%>
                         <a href="jsp/control.jsp" target="right" class="btn btn-primary">
                             <img src="../img/3.png" style="width:30%" />控制策略
                         </a>
@@ -51,9 +51,9 @@
                         <a href="jsp/area.jsp" target="right" class="btn btn-primary">
                             <img src="../img/6.png" style="width:30%" />区域分组
                         </a>
-                        <a href="jsp/backup.jsp" target="right" class="btn btn-primary">
-                            <img src="../img/7.png" style="width:30%" />备份还原
-                        </a>
+                        <%--<a href="jsp/backup.jsp" target="right" class="btn btn-primary">--%>
+                            <%--<img src="../img/7.png" style="width:30%" />备份还原--%>
+                        <%--</a>--%>
                         <a href="jsp/manage.jsp" target="right" class="btn btn-primary">
                             <img src="../img/8.png" style="width:30%" />系统管理
                         </a>

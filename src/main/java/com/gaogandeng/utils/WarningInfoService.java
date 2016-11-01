@@ -12,7 +12,7 @@ import java.util.List;
  * Created by lanxing on 16-3-16.
  */
 
-@Service("warningService")
+@Service("warningInfoService")
 public class WarningInfoService {
     private WarningLogService warningLogService;
 

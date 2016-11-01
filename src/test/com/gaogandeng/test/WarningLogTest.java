@@ -35,7 +35,7 @@ public class WarningLogTest {
 
     @Test
     public void insertTest(){
-        for (int i = 0; i != 20; ++i){
+        for (int i = 0; i <= 20; ++i){
             WarningLog log = new WarningLog();
             log.setInfo("电流过大");
             Light light = lightService.findLightById(2);

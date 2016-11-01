@@ -203,7 +203,6 @@ public class AreaControl {
                         timer.cancel();// 停止定时器
                     }
                 }
-
             }
         };
 

@@ -12,9 +12,9 @@
     <script src="../js/login.js" type="text/javascript"></script>
 </head>
 <body>
-    <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">
-        <img src="../img/loginbg.jpg" height="100%" width="100%"/>
-    </div>
+    <%--<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">--%>
+        <%--<img src="../img/loginbg.jpg" height="100%" width="100%"/>--%>
+    <%--</div>--%>
     <div>
         <div class="wrapper">
             <div class="container">

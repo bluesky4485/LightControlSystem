@@ -14,8 +14,6 @@ function findData(start_time,stop_time){
         url:'/control/query.do?start_time='+start_time+"&stop_time="+stop_time,//需要添加
         type:"GET",
         dataType: 'json',
-        timeout: 1000,
-        cache: false,
         //beforeSend: LoadFunction, //加载执行方法
         //error: erryFunction,  //错误执行方法
         success: succFunction //成功执行方法
