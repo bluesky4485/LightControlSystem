@@ -1,5 +1,7 @@
 package com.gaogandeng.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 
 /**
@@ -36,6 +38,7 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }

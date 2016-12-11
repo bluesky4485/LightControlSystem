@@ -23,8 +23,8 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <input  name="cha_start_time" id="cha_start_time" type="text" class="mys" value="" placeholder="起始时间"  style="cursor:pointer;height: 20px;width:20%;"/>
-            <input  name="cha_stop_time" id="cha_stop_time" type="text" class="mys" value="" placeholder="结束时间"  style="cursor:pointer;height: 20px;width:20%;"/>
+            <input  name="cha_start_time" id="cha_start_time" type="text" class="mys" value="" placeholder="起始时间"  style="cursor:pointer;height: 30px;width:20%;"/>
+            <input  name="cha_stop_time" id="cha_stop_time" type="text" class="mys" value="" placeholder="结束时间"  style="cursor:pointer;height: 30px;width:20%;"/>
         </div>
     </div>
     <div class="row">

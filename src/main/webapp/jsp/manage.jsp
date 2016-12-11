@@ -28,10 +28,10 @@
                 <tr style="background-color: #215867;text-align: center;">
                     <td><span style="color: white">#</span></td>
                     <td><span style="color: white">用户名</span></td>
-                    <td><span style="color: white">密码</span></td>
+                    <%--<td><span style="color: white">密码</span></td>--%>
                     <td><span style="color: white">电话</span></td>
                     <td><span style="color: white">地址</span></td>
-                    <td>&nbsp;</td>
+                    <td><span style="color: white">操作</span></td>
                 </tr>
                 </thead>
                 <tbody id="list" style="text-align: center">
